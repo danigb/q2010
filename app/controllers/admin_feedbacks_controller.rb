@@ -1,0 +1,2 @@
+class AdminFeedbacksController < ApplicationController
+end

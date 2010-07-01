@@ -1,0 +1,20 @@
+<% title('Actividad del sitio') %>
+
+<table>
+  <thead>
+    <tr>
+      <td>Cuándo</td>
+      <td>Qué</td>
+      <td>Enlace</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @activities.each do |a| %>
+    <tr>
+      <td><%= h a.created_at %></td>
+      <td><%= h a.category %><%= h a.description %></td>
+      <td><%= h a.url %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
