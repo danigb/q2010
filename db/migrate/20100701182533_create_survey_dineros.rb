@@ -1,6 +1,8 @@
 class CreateSurveyDineros < ActiveRecord::Migration
   def self.up
     create_table :survey_dineros do |t|
+      t.references :user
+
       t.boolean :laboral_entrepreneur
       t.boolean :laboral_employe
       t.boolean :laboral_various

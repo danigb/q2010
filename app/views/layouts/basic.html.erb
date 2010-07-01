@@ -9,8 +9,8 @@
     <%= yield :header %>
     <% if @image %>
       <style type="text/css">
-      #header {background-image: <%= "url(/images/headers/#{@image}_header_txt.gif)" %> }
-      #banner {background-image: <%= "url(/images/headers/#{@image}_header.jpg)" %> }
+        #header {background-image: <%= "url(/images/headers/#{@image}_header_txt.gif)" %> }
+        #banner {background-image: <%= "url(/images/headers/#{@image}_header.jpg)" %> }
       </style>
     <% end %>
   </head>
@@ -21,6 +21,10 @@
     </div>
 
     <div id="account" class="container">
+      <% unless flash[:notice].blank? %>
+        <div class="flash"><%= flash[:notice] %></div>
+      <% end %>
+      <%= link_to t(:feedback), new_feedback_path, :id => 'feedback' %>
     </div>
 
 

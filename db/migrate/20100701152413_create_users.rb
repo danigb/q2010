@@ -3,7 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username, :null => false
       t.string :email, :null => false
-      t.string :password, :null => false
+      t.boolean :request_info
+      t.boolean :allow_publish
       t.string    :crypted_password,    :null => false                # optional, see below
       t.string    :password_salt,       :null => false                # optional, but highly recommended
       t.string    :persistence_token,   :null => false                # required

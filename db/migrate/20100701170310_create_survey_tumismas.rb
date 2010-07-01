@@ -1,6 +1,8 @@
 class CreateSurveyTumismas < ActiveRecord::Migration
   def self.up
     create_table :survey_tumismas do |t|
+      t.references :user
+
       t.string :birth, :limit => 100
       t.string :gender, :limit => 100
       t.string :since, :limit => 100

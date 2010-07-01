@@ -229,12 +229,12 @@ h1 {
 #navigation ul li a { color: #414042; }
 #nav_presentacion a {
   width: 139px;
-  background: transparent url(../images/nav_grey.gif) 0 0 no-repeat;
+  background: transparent url(/images/nav_grey.gif) 0 0 no-repeat;
 }
 #nav_presentacion a:hover { background-image: url(../images/nav_white.gif); }
 #nav_presentacion span {
   width: 139px;
-  background: transparent url(../images/nav_white.gif) 0 0 no-repeat;
+  background: transparent url(/images/nav_white.gif) 0 0 no-repeat;
 }
 #nav_tumisma a {
   width: 113px;
@@ -246,11 +246,11 @@ h1 {
 }
 #nav_tumisma span {
   width: 113px;
-  background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;
+  background: transparent url(/images/nav_white.gif) -139px 0 no-repeat;
 }
 #nav_experiencia a {
   width: 135px;
-  background: transparent url(../images/nav_grey.gif) -253px 0 no-repeat;
+  background: transparent url(/images/nav_grey.gif) -253px 0 no-repeat;
 }
 #nav_experiencia a:hover {
   width: 135px;
@@ -348,6 +348,10 @@ form p {
   width: 100%;
   overflow: hidden;
 }
+.visualize p {
+  width: 100%;
+  overflow: hidden;
+}
 form p label {
   display: block;
   margin-top: 1.5em;
@@ -356,11 +360,42 @@ form p label {
   font-weight: bold;
   font-size: 90%;
 }
-form p a.see_answer {
+.visualize p label {
   display: block;
-  font-size: 80%;
-  float: right;
-  color: red;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
+  color: #9c9e9f;
+  font-weight: bold;
+  font-size: 90%;
+}
+form label.radio {
+  font-size: 12px;
+  vertical-align: middle;
+  color: #414042;
+  margin: 0 0 3px 35px;
+}
+form label.checkbox {
+  font-size: 12px;
+  vertical-align: middle;
+  color: #414042;
+  margin: 0 0 3px 35px;
+}
+.visualize label.radio {
+  font-size: 12px;
+  vertical-align: middle;
+  color: #414042;
+  margin: 0 0 3px 35px;
+}
+.visualize label.checkbox {
+  font-size: 12px;
+  vertical-align: middle;
+  color: #414042;
+  margin: 0 0 3px 35px;
+}
+form .field_info {
+  font-size: 75%;
+  color: #9c9e9f;
+  margin-left: 1em;
 }
 form input[type=text] {
   font-size: 85%;
@@ -421,23 +456,6 @@ form input[type=checkbox] {
   margin-left: 15px;
   height: 12px;
 }
-form label.radio {
-  font-size: 12px;
-  vertical-align: middle;
-  color: #414042;
-  margin: 0 0 3px 35px;
-}
-form label.checkbox {
-  font-size: 12px;
-  vertical-align: middle;
-  color: #414042;
-  margin: 0 0 3px 35px;
-}
-form .field_info {
-  font-size: 75%;
-  color: #9c9e9f;
-  margin-left: 1em;
-}
 p.submit {
   background-color: #efefef;
   margin-bottom: 1em;
@@ -454,23 +472,35 @@ p.submit span {
   font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 p.submit.bottom { margin-top: 60px; }
-.survey p {
-  width: 100%;
-  overflow: hidden;
+.visualize {
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  margin: 40px 0;
 }
-.survey p label {
-  display: block;
-  margin-top: 1.5em;
-  margin-bottom: 0.3em;
+.visualize h1 {
+  font-size: 200%;
+  line-height: 0.9em;
+  border-bottom: 1px solid #9c9e9f;
   color: #9c9e9f;
-  font-weight: bold;
-  font-size: 90%;
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  margin: 30px 0 0 0;
+}
+d.visualize .control {
+  display: block;
+  float: left;
 }
 form table {
   margin-left: 1em;
   width: 81.5%;
 }
+.visualize table {
+  margin-left: 1em;
+  width: 81.5%;
+}
 form table td {
+  padding: 2px;
+  font-size: 12px;
+}
+.visualize table td {
   padding: 2px;
   font-size: 12px;
 }

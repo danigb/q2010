@@ -1,5 +1,6 @@
+<br/>
 <%= title 'Danos tu opinión' %>
-
+<br/>
 <% form_for(@feedback) do |f| %>
   <p>
     <%= f.label :body, 'Sugerencias, críticas, alabanzas... suéltanoslo todo' %>
@@ -15,4 +16,6 @@
     <%= f.submit 'Enviar' %> <%= link_to 'Cancelar', root_path %>
   </p>
 <% end %>
+
+  <br/><br/>
 

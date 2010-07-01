@@ -1,5 +1,8 @@
 
 es:
+  submit_info: "Guarda el formulario antes de pasar al siguiente"
+  app:
+    view: "Ver"
 
   layouts:
     login: "Entrar"
@@ -11,8 +14,8 @@ es:
     basic:
       presentacion: "Presentación"
       tumisma: "Tú mismx"
-      experiencia: "Experiencias"
-      dinero: "Dineros"
+      experiencias: "Experiencias"
+      dineros: "Dineros"
       autoria: "Autoria"
       habitat: "Hábitat"
       red: "Redes"
@@ -22,3 +25,79 @@ es:
       questions: "Preguntas"
       buckets: "Archivos"
       feedbacks: "La gente opina"
+
+  auth:
+    user_required: "Necesitas entrar para poder acceder a esta página"
+    require_no_user: "No puedes acceder a esta página como usuario registrado"
+
+  name: "Nombre"
+  group: "Grupo"
+  user: "Usuario"
+  value: "Valor"
+
+  survey:
+    saved: "Se ha guardado esta página del formulario. Gracias"
+    notsaved: "Se ha producido un problema intentando guardar. Inténtalo de nuevo, por favor"
+
+  about:
+    index:
+      title: "¿Quien está detrás de la cultura? - Cuestionario"
+  users:
+    form:
+      username: "Nombre de usuarix"
+      email: "Correo electrónico"
+      password: "Contraseña"
+      password_confirmation: "Repite contraseña"
+      signup: "Añadir"
+      request_info: "Mantenerme informada por email del proceso de la coinvestigación y de eventos relacionados con la misma"
+      allow_publish: "Permitir que los datos de 'Presentación' (y sólo éstos) aparezcan en la cartografía del territorio andaluz"
+      options: "Opciones (se pueden modificar en cualquier momento)"
+    update: "Modificar"
+    updated: "Tu perfil ha sido modificado."
+    created: "Muchas gracias por registrarte. Puedes cambiar tus opciones pulsando sobre 'Editar Perfil'."
+    change_password: "La contraseña no se modificará si se dejan vacíos los dos próximos campos"
+    index:
+      title: "Usuarios registrados"
+    new:
+      title: "Registro de usuarixs"
+    show:
+      title: "Usuario "
+    edit:
+      title: "Editando perfil de '{{name}}'"
+  user_sessions:
+    created: "Bienvenidx al cuestionario de Reu08"
+    destroyed: "Adiós. Vuelve pronto!"
+    new:
+      username: "Nombre de usuario"
+      password: "Contraseña"
+      title: "Entrar"
+      login: "Entrar"
+      remember_me: "Mantenerme registradx hasta que pulse 'Salir'"
+  feedbacks:
+    updated: "... eh!? cómo has hecho esto!?"
+    created: "Muchas gracias. Tu opinión será tenida muy en cuenta."
+    new:
+      title: "¿Qué opinas?"
+      email: "Correo electrónico (opcional)"
+      body: "Sugerencias, críticas, alabanzas... suéltanoslo todo!"
+      submit: "Enviar"
+    index:
+      title: "Opiniones"
+
+  admin_users:
+    index:
+      title: "Personas o colectivos dadas de alta"
+      username: "Nombre"
+    show:
+      title: "Resúmen de las respuestas de '{{user}}'"
+
+  admin_questions:
+    edit: "Editar"
+    index:
+      title: "Listado de preguntas"
+      actions: ""
+
+  admin_feedbacks:
+    index:
+      title: "Mensajes recibidos a través de la web"
+

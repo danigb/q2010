@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        email: "El email"
+        password: "La contraseña"
+        password_confirmation: "La contraseña repetida"
+    errors:
+      template:
+        body: "Hay problemas en los datos que nos envías..."
+      models:
+        user:
+          attributes:
+            email:
+              too_short: "es demasiado corto"
+            password:
+              too_short: "es demasiado corta"
+            password_confirmation:
+              too_short: "es demasiado corta"

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20100701190709) do
   end
 
   create_table "survey_dineros", :force => true do |t|
+    t.integer  "user_id"
     t.boolean  "laboral_entrepreneur"
     t.boolean  "laboral_employe"
     t.boolean  "laboral_various"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20100701190709) do
   end
 
   create_table "survey_experiencias", :force => true do |t|
+    t.integer  "user_id"
     t.string   "studies",                     :limit => 32
     t.boolean  "studies_eso"
     t.boolean  "studies_bachiller"
@@ -183,6 +185,7 @@ ActiveRecord::Schema.define(:version => 20100701190709) do
   end
 
   create_table "survey_tumismas", :force => true do |t|
+    t.integer  "user_id"
     t.string   "birth",                  :limit => 100
     t.string   "gender",                 :limit => 100
     t.string   "since",                  :limit => 100
@@ -218,7 +221,8 @@ ActiveRecord::Schema.define(:version => 20100701190709) do
   create_table "users", :force => true do |t|
     t.string   "username",                             :null => false
     t.string   "email",                                :null => false
-    t.string   "password",                             :null => false
+    t.boolean  "request_info"
+    t.boolean  "allow_publish"
     t.string   "crypted_password",                     :null => false
     t.string   "password_salt",                        :null => false
     t.string   "persistence_token",                    :null => false

@@ -1,0 +1,2 @@
+class AdminSurveysController < ApplicationController
+end

@@ -4,11 +4,14 @@ class SurveyTumismasController < ApplicationController
   #actions :update
 
 
-  def edit
-    if current_user
-    else
-      @survey = SurveyTumisma.new
-    end
+    def edit
+    @survey = current_user ? current_user.survey_tumisma :  SurveyTumisma.new
     render :action => 'tumisma_edit'
   end
+
+  def update
+    update!(:notice => "El cuestionario  'Tumismx' se ha guardado. Por favor continúa con el de 'Experiencias'") { survey_experiencia_path  }
+  end
+
+
 end

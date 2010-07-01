@@ -93,13 +93,13 @@ h1 {font-size: 200%; color: @medio;}
     color: @oscuro;
 }
 
-#nav_presentacion a {width: 139px; background: transparent url(../images/nav_grey.gif) 0 0 no-repeat;}
+#nav_presentacion a {width: 139px; background: transparent url(/images/nav_grey.gif) 0 0 no-repeat;}
 #nav_presentacion a:hover {background-image: url(../images/nav_white.gif);}
-#nav_presentacion span {width: 139px; background: transparent url(../images/nav_white.gif) 0 0 no-repeat;}
+#nav_presentacion span {width: 139px; background: transparent url(/images/nav_white.gif) 0 0 no-repeat;}
 #nav_tumisma a {width: 113px; background: transparent url(../images/nav_grey.gif) -139px 0 no-repeat;}
 #nav_tumisma a:hover {width: 113px; background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;}
-#nav_tumisma span {width: 113px; background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;}
-#nav_experiencia a {width: 135px; background: transparent url(../images/nav_grey.gif) -253px 0 no-repeat;}
+#nav_tumisma span {width: 113px; background: transparent url(/images/nav_white.gif) -139px 0 no-repeat;}
+#nav_experiencia a {width: 135px; background: transparent url(/images/nav_grey.gif) -253px 0 no-repeat;}
 #nav_experiencia a:hover {width: 135px; background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;}
 #nav_experiencia span {width: 135px; background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;}
 #nav_dinero a {width: 95px; background: transparent url(../images/nav_grey.gif) -388px 0 no-repeat;}
@@ -144,10 +144,19 @@ h1 {font-size: 200%; color: @medio;}
 .errorExplanation {color: #c00;}
 .errorExplanation h2 {font-size: 1px; display: none; width: 0;}
 
-form p {width: 100%; overflow: hidden;}
-form p label {display: block; margin-top: 1.5em; margin-bottom: 0.3em;
-              color: @medio; font-weight: bold; font-size: 90%;}
-form p a.see_answer {display: block; font-size: 80%; float: right; color: red;}
+form p, .visualize p {width: 100%; overflow: hidden;}
+form p label, .visualize p label {
+    display: block; margin-top: 1.5em; margin-bottom: 0.3em;
+    color: @medio; font-weight: bold; font-size: 90%;
+}
+form label.radio, form label.checkbox,  .visualize label.radio, .visualize label.checkbox {
+    font-size: 12px;
+    vertical-align: middle; color: @oscuro;
+    margin: 0 0 3px 35px;
+}
+
+form .field_info {font-size: 75%; color: @medio; margin-left: 1em;}
+
 form input[type=text], form p input[type=password], form textarea {
     font-size: 85%;
     border: 1px solid @medio; color: @oscuro;
@@ -177,12 +186,6 @@ form input[type=radio], form input[type=checkbox]  {
     margin-left: 15px;  height: 12px;
 }
 
-form label.radio, form label.checkbox  {
-    font-size: 12px;
-    vertical-align: middle; color: @oscuro;
-    margin: 0 0 3px 35px;}
-
-form .field_info {font-size: 75%; color: @medio; margin-left: 1em;}
 
 /* BOTÓN DE GUARDAR */
 p.submit { background-color: #efefef; margin-bottom: 1em; .round; width: 93%; padding: 0 0px 10px 10px;
@@ -193,14 +196,14 @@ p.submit.bottom{margin-top: 60px;}
 
 /** ver CUESTIONARIOS **/
 
-.survey p {width: 100%; overflow: hidden;}
-.survey p label {display: block; margin-top: 1.5em; margin-bottom: 0.3em;
-              color: @medio; font-weight: bold; font-size: 90%;}
-
+.visualize {    font-family: "Lucida Grande", Verdana, sans-serif; margin: 40px 0;}
+.visualize h1 {font-size: 200%; line-height: 0.9em;  border-bottom: 1px solid @medio;
+               color: @medio;font-family: "Lucida Grande", Verdana, sans-serif; margin:30px 0 0 0;}
+d.visualize .control {display: block; float: left;}
 /* TABLAS DENTRO DE FORMULARIOS */
 
-form table {margin-left: 1em; width: 81.5%; }
-form table td {padding: 2px; font-size: 12px;}
+form table, .visualize table {margin-left: 1em; width: 81.5%; }
+form table td, .visualize table td {padding: 2px; font-size: 12px;}
 form table thead {background-color: white; text-align: center;}
 form table td input[type=text] {width: 90%; font-size: 80%;}
 form table td input[type=radio] {display: inline; float: none; clear: none; margin: 0 3px;}

@@ -1,6 +1,7 @@
 class CreateSurveyExperiencias < ActiveRecord::Migration
   def self.up
     create_table :survey_experiencias do |t|
+      t.references :user
       
       t.string :studies, :limit => 32
 

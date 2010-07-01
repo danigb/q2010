@@ -1,0 +1,26 @@
+<%= title t('.title'  )  %>
+
+<div class="dialog">
+  <% form_for @user_session do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :username, t('.username') %>
+      <%= f.text_field :username %>
+    </p>
+    <p>
+      <%= f.label :password, t('.password') %>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <br/>
+      <%= f.check_box :remember_me %>
+      <label class="radio"><%= t('.remember_me') %></label>
+    </p>
+    <p class="bottom">
+      <%= f.submit t('.login') %> <span class="crear"><%= link_to 'Cancelar', root_path %></span>
+    </p>
+  <% end %>
+</div>
+<p class="crear">
+<%= link_to 'Crear una cuenta', new_user_path %>
+</p>
