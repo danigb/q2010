@@ -1,0 +1,73 @@
+<% title("Presentación") %>
+
+<% form_for @survey do |form| %>
+  <%#= next_step cuestionario_path(:id => 'presentacion') %>
+
+  <% if current_user %>
+    <p class="submit">
+      <%= form.submit "Guardar" %><span><%= t(:submit_info) %></span>
+    </p>
+  <% else %>
+    <%= render 'surveys/preview' %>
+  <% end %>
+
+  <% if current_user %>
+    <p class="submit">
+      <%= form.submit "Guardar" %><span><%= t(:submit_info) %></span>
+    </p>
+  <% else %>
+  <% end %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :page_url %>
+    <%= form.text_field :page_url %>
+  </p>
+
+  <p>
+    <%= form.label :icon %>
+    <%= form.text_field :icon, :class => 'upload_file', :id => 'icon' %>
+  </p>
+
+  <p>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </p>
+
+
+  <p>
+    <%= form.label :indi_colective %>
+    <%= form.radio_button :indi_colective, :individual %><label class="radio">Proyecto individual</label>
+    <%= form.radio_button :indi_colective, :proyecto %><label class="radio">Proyecto colectivo</label>
+    <%= form.radio_button :indi_colective, :ambos %><label class="radio">Ambos</label>
+  </p>
+
+  <p>
+    <label>¿En qué ámbitos desempeñas alguna actividad? Usa las cajas de texto para dar más información...</label>
+  <table>
+    <% SurveyPresentacion::AMBITOS.each do |name| %>
+      <tr>
+        <td><%= form.check_box "activity_#{name}" %>&nbsp;
+          <%= form.label name %></td>
+        <td><%= form.text_field name %></td>
+      </tr>
+    <% end %>
+  </table>
+  </p>
+
+  <p>
+    <%= form.label :interest %>
+    <%= form.text_area :interest %>
+  </p>
+
+  <% if current_user %>
+    <p class="submit bottom">
+      <%= form.submit "Guardar" %><span><%= t(:submit_info) %></span>
+    </p>
+  <% end %>
+
+<% end %>

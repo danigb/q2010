@@ -1,0 +1,2 @@
+class SurveyHabitatController < ApplicationController
+end

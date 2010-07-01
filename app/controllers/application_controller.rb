@@ -4,7 +4,19 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  filter_parameter_logging :password
+  include AuthModule
+  helper_method :current_user, :admin_page?
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+
+  def admin_required
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "reu08"
+    end
+    @admin_page = true
+  end
+
+  def admin_page?
+    @admin_page == true
+  end
 end

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title><%= yield(:title) || 'Bienvenida' %> - Reu08 Cuestionario Online </title>
+    <!-- link rel="icon" href="images/e3e.ico" type="image/x-icon" / -->
+    <%= stylesheet_link_tag 'public' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <%= yield :header %>
+    <% if @image %>
+      <style type="text/css">
+      #header {background-image: <%= "url(/images/headers/#{@image}_header_txt.gif)" %> }
+      #banner {background-image: <%= "url(/images/headers/#{@image}_header.jpg)" %> }
+      </style>
+    <% end %>
+  </head>
+  <body>
+    <div id="banner">
+      <a href="/">Reu08 Cuestionario</a>
+      <span id="header">&nbsp;</span>
+    </div>
+
+    <div id="account" class="container">
+      <% unless flash[:notice].blank? %>
+        <div class="flash"><%= flash[:notice] %></div>
+      <% end %>
+      <%= link_to t(:feedback), new_feedback_path, :id => 'feedback' %>
+      <% if current_user %>
+        <span style="display: none"><%= t(:welcome, :name => current_user.username) %></span>
+        <%= link_to t(:logout), logout_path, :id => 'logout' %>
+        <%= link_to t(:edit_profile), edit_user_path(:current), :id => 'edit_profile' %>
+      <% else %>
+        <%= link_to t(:signup), new_user_path, :id => 'signup' %>
+        <%= link_to t(:login), login_path, :id => 'login' %>
+      <% end %>
+    </div>
+
+
+
+    <div id="navigation" class="container">
+        <ul>
+          <% Survey::CUESTIONARIOS.each do |name| %>
+            <li id="nav_<%= name  %>"><%= cuestionario_nav(name) %></li>
+          <% end %>
+        </ul>
+    </div>
+
+    <div id="page" class="container">
+      <div class="column-1">
+        <%= yield  %>
+      </div>
+    </div>
+    <div id="credits" class="container">
+      <a href="http://calclab.com">software hecho a mano por &nbsp;<span class="calc">calc</span></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/r08.ico" />
+    <title><%= yield(:title) || 'Bienvenida' %> - Reu08 Cuestionario Online </title>
+    <%= stylesheet_link_tag 'public' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <%= javascript_include_tag 'jquery.dirty_form.js'  %>
+    <%= yield :header %>
+    <% if @image %>
+      <style type="text/css">
+      #header {background-image: <%= "url(/images/headers/#{@image}_header_txt.gif)" %> }
+      #banner {background-image: <%= "url(/images/headers/#{@image}_header.jpg)" %> }
+      </style>
+    <% end %>
+  </head>
+  <body>
+    <div id="banner">
+      <a href="/">Reu08 Cuestionario</a>
+      <span id="header">&nbsp;</span>
+    </div>
+
+    <div id="account" class="container">
+    </div>
+
+
+    <div id="page" class="container">
+      <div class="column-1">
+        <%= yield  %>
+      </div>
+    </div>
+    <div id="credits" class="container">
+      <a href="http://calclab.com">software hecho a mano por &nbsp;<span class="calc">calc</span></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+
+@import "reset-min.css";
+@import "variables";
+
+
+
+html {
+    background-color: @fondo;
+    font-family: "Lucida Grande", Verdana, sans-serif;
+}
+
+/* ELEMENTOS HTML */
+a {text-decoration: none; color: @oscuro;}
+a:hover {text-decoration: underline;}
+h1 {font-size: 200%; color: @medio;}
+
+/* ELEMENTOS GENERALES */
+.container { width: 960px; margin: 0 auto; }
+.column-1 { padding-left: 1em; padding-top: 1em; width: 900px;}
+
+/* BARRA SUPERIOR */
+#banner {
+    position: fixed; left: 0; top: 0; right: 0;
+    background-image: url(../images/headers/cuestionario_header.jpg);
+    background-repeat: no-repeat;
+    background-color: @medio;
+    height: 113px;
+}
+
+
+#banner a {
+    text-indent: -1000px;
+    width: 113px;
+    height: 113px;
+    background-image: url(../images/logo_r08.gif);
+    float: left;
+    display: block;
+}
+
+#header {
+    background-image: url(../images/headers/cuestionario_header_txt.gif);
+    background-repeat: no-repeat;
+    height: 110px;
+    width: 800px;
+    float: right;
+    margin-right: 80px;
+}
+
+/* GESTIÓN DE USUARIO */
+#account {
+    padding-top: 120px;
+    height: 35px;
+    width: 76%; overflow: hidden;
+}
+#account a {height: 25px; text-indent: -1000px; display: block; float: right; padding: 0; margin: 0;
+            overflow: hidden; background-repeat: no-repeat; background-color: transparent;
+            background-image: url(../images/account.gif);}
+#signup {width: 106px; background-position:  0 0;}
+#signup:hover {width: 106px; background-position:  0 -31px;}
+#login {width: 69px; background-position: -106px 0;}
+#login:hover { background-position: -106px -31px;}
+#edit_profile {width: 106px; background-position:  -175px 0 ;}
+#edit_profile:hover {width: 106px; background-position:  -175px -31px ;}
+#logout {width: 54px; background-position: -281px 0; }
+#logout:hover {background-position: -281px -31px ;}
+#feedback {width: 101px; background-position:  -335px 0 ;}
+#feedback:hover {width: 101px; background-position:  -335px -31px ;}
+
+#account a.admin {padding: 0.2em 1em; color: white; margin-right: 1em; font-size: 75%;
+                  background-color: @oscuro; .round; }
+
+/* MENSAJES FLASH */
+
+
+.flash {
+    float: left; display: block;  width: 65%; text-align: center; padding: 5px 5px;
+    background-color: @flash; color: white; font-size: 85%; font-weight: bold;
+    cursor: pointer;
+    .round;
+}
+
+/* NAVEGACION */
+#navigation {text-indent: -1000px; margin-top: 3em; background-color: @fondo;  }
+#navigation ul, #navigation ol {width: 100%; overflow: hidden; }
+#navigation ol {text-indent: 0; }
+#navigation ol li { display: block; float:left; margin-right: 0.5em;
+                    padding: 0.2em 1em; color: white; background-color: @oscuro; .tab-borders;}
+#navigation ol li a {color: @fondo;}
+
+#navigation ul li {display: block; float: left; padding: 0; }
+#navigation ul li a, #navigation li span {display: block;height: 34px;}
+#navigation ul li a {
+    color: @oscuro;
+}
+
+#nav_presentacion a {width: 139px; background: transparent url(../images/nav_grey.gif) 0 0 no-repeat;}
+#nav_presentacion a:hover {background-image: url(../images/nav_white.gif);}
+#nav_presentacion span {width: 139px; background: transparent url(../images/nav_white.gif) 0 0 no-repeat;}
+#nav_tumisma a {width: 113px; background: transparent url(../images/nav_grey.gif) -139px 0 no-repeat;}
+#nav_tumisma a:hover {width: 113px; background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;}
+#nav_tumisma span {width: 113px; background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;}
+#nav_experiencias a {width: 135px; background: transparent url(../images/nav_grey.gif) -253px 0 no-repeat;}
+#nav_experiencias a:hover {width: 135px; background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;}
+#nav_experiencias span {width: 135px; background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;}
+#nav_dineros a {width: 95px; background: transparent url(../images/nav_grey.gif) -388px 0 no-repeat;}
+#nav_dineros a:hover {width: 95px; background: transparent url(../images/nav_white.gif) -388px 0 no-repeat;}
+#nav_dineros span {width: 95px; background: transparent url(../images/nav_white.gif) -388px 0 no-repeat;}
+#nav_autoria {width: 94px; background: transparent url(../images/nav_grey.gif) -483px 0 no-repeat;}
+#nav_autoria a:hover {width: 94px; background: transparent url(../images/nav_white.gif) -483px 0 no-repeat;}
+#nav_autoria span {width: 94px; background: transparent url(../images/nav_white.gif) -483px 0 no-repeat;}
+#nav_habitat a {width: 93px; background: transparent url(../images/nav_grey.gif) -577px 0 no-repeat;}
+#nav_habitat a:hover {width: 93px; background: transparent url(../images/nav_white.gif) -577px 0 no-repeat;}
+#nav_habitat span {width: 93px; background: transparent url(../images/nav_white.gif) -577px 0 no-repeat;}
+#nav_red a {width: 84px; background: transparent url(../images/nav_grey.gif) -670px 0 no-repeat;}
+#nav_red a:hover {width: 84px; background: transparent url(../images/nav_white.gif) -670px 0 no-repeat;}
+#nav_red span {width: 84px; background: transparent url(../images/nav_white.gif) -670px 0 no-repeat;}
+#nav_comun a {width: 117px; background: transparent url(../images/nav_grey.gif) -755px 0 no-repeat;}
+#nav_comun a:hover {width: 117px; background: transparent url(../images/nav_white.gif) -755px 0 no-repeat;}
+#nav_comun span {width: 117px; background: transparent url(../images/nav_white.gif) -755px 0 no-repeat;}
+
+
+/* PAGINA */
+#page {padding-bottom: 2em; background-color: white;}
+
+
+#credits {
+    font-size: 75%;
+    background-color:@fondo; color: @medio;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.dialog {
+    padding: 1em 0;
+    margin-bottom: 1em;
+    width: 70%;
+
+}
+
+/* FORMULARIOS */
+/* errores */
+.fieldWithErrors input[type=text], .fieldWithErrors input[type=password] {border: 1px solid #c00;}
+
+.errorExplanation {color: #c00;}
+.errorExplanation h2 {font-size: 1px; display: none; width: 0;}
+
+form p {width: 100%; overflow: hidden;}
+form p label {display: block; margin-top: 1.5em; margin-bottom: 0.3em;
+              color: @medio; font-weight: bold; font-size: 90%;}
+form p a.see_answer {display: block; font-size: 80%; float: right; color: red;}
+form input[type=text], form p input[type=password], form textarea {
+    font-size: 85%;
+    border: 1px solid @medio; color: @oscuro;
+    padding: 1px 2px; margin-left: 1em;
+    width: 80%;}
+form textarea {height: 4em; font-size: 85%;}
+
+form input[type=submit] {
+    border: 2px  #cccccc;
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    background-color: @oscuro;
+    color: #cdd4dc;
+    font-size: 75%;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.08em;
+    margin-top: 10px;
+    .round;
+}
+
+form input[type=submit]:hover {
+    color: white;
+}
+
+
+form input[type=radio], form input[type=checkbox]  {
+    display: block; float: left; clear: left; vertical-align: middle; padding: 0;
+    margin-left: 15px;  height: 12px;
+}
+
+form label.radio, form label.checkbox  {
+    font-size: 12px;
+    vertical-align: middle; color: @oscuro;
+    margin: 0 0 3px 35px;}
+
+form .field_info {font-size: 75%; color: @medio; margin-left: 1em;}
+
+/* BOTÓN DE GUARDAR */
+p.submit { background-color: #efefef; margin-bottom: 1em; .round; width: 93%; padding: 0 0px 10px 10px;
+           margin-top: 40px;}
+p.submit span {color: @medio; font-size: 80%; padding-left: 1em;
+               font-family: Verdana, Helvetica, Arial, sans-serif;}
+p.submit.bottom{margin-top: 60px;}
+
+/** ver CUESTIONARIOS **/
+
+.survey p {width: 100%; overflow: hidden;}
+.survey p label {display: block; margin-top: 1.5em; margin-bottom: 0.3em;
+              color: @medio; font-weight: bold; font-size: 90%;}
+
+/* TABLAS DENTRO DE FORMULARIOS */
+
+form table {margin-left: 1em; width: 81.5%; }
+form table td {padding: 2px; font-size: 12px;}
+form table thead {background-color: white; text-align: center;}
+form table td input[type=text] {width: 90%; font-size: 80%;}
+form table td input[type=radio] {display: inline; float: none; clear: none; margin: 0 3px;}
+td.none, form td.nimp, td.very_bad, td.never {background-color: white; text-align: center;}
+td.some, td.few, td.bad, td.sometimes {background-color: #cbced0;text-align: center;}
+td.quite, td.moderate, td.acceptable, td.usually {background-color: #9c9e9f;text-align: center;}
+td.lot, td.important, td.good, td.always {background-color: #646265;text-align: center;}
+td.full, td.very, td.very_good {background-color: #414042;text-align: center;}
+form td.radio {width: 1em;}
+.tooltip {
+    display: none;
+    position: absolute; margin-top: 1em; margin-left: 1em;
+    padding: 0.1em 0 0.3em 0; font-weight: 100; font-size: 75%;
+    width: 10em; height: 1em; text-align: center;
+    border: 1px solid @oscuro; background-color: @fondo;
+}
+
+/* TABLAS FUERA DE FORMULARIOS */
+table {width: 100%; margin-bottom: 2em; font-weight: lighter;}
+table thead {text-align: left; background-color: @medio; color: white; }
+table td {padding: 3px; font-weight: bold; font-size: 85%; color: @oscuro;}
+table td a {color: @oscuro;}
+td.else {width: 10%; font-weight: bold; font-size: 12px;}
+thead { color: white; font-weight: bold; text-align: center; background-color: white;}
+tr.odd {background-color: #efefef;}
+
+table.answers {margin-top: 20px; border-top: 1px solid @fondo;}
+table.answers tr {border-bottom: 1px solid @fondo;}
+table.answers td {font-weight: normal;}
+
+/* UPLOAD FORM */
+.uploader {padding: 1em; background-color: white; font-size: 75%; .round; margin-top: 1em;}
+.uploader a {padding: 0.2em 0.5em; color: white; background-color: @medio; .round;}
+.uploader .thumbnails {width: 100%; overflow: hidden;}
+.uploader .bucket {float: left; margin-right: 1em; margin-bottom: 1em;}
+.uploader .bucket a {display: block;  margin: 0.3em 0; text-align: center;}
+
+/* ABOUT */
+.about a {text-decoration: underline; color: @oscuro; }
+.about {margin-top: 2em; padding: 1em 5em; font-size: 12px; line-height: 1.8em; width: 83%; }
+.about h1 {margin-bottom: 2em;}
+.about p {margin: 1.8em 0;}
+.about ol li {margin-left: 2em; list-style-type:decimal; margin-bottom: 0.5em;}
+.about ul li {margin-left: 2em; list-style-type:circle;}
+
+/* FEEDBACK */
+#feedback_body {height: 15em;}
+.feedback {border-top: 1px solid @medio; margin: 1em auto; width: 80%;}
+.feedback h1 {font-size: 100%;}
+p.bottom {margin-top: 40px;}
+
+/* CREAR CUENTA */
+.crear {
+    font-size: 80%;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+#credits {margin-top: 0.2em;}
+.calc {font-family: monospace; letter-spacing: 0.8em; font-size: 120%;}

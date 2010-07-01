@@ -1,0 +1,18 @@
+<%= title 'Danos tu opinión' %>
+
+<% form_for(@feedback) do |f| %>
+  <p>
+    <%= f.label :body, 'Sugerencias, críticas, alabanzas... suéltanoslo todo' %>
+    <%= f.text_area :body %>
+  </p>
+  <% if current_user.nil? %>
+  <p>
+    <%= f.label :email, 'Correo electrónico (opcional)' %>
+    <%= f.text_field :email, :class => 'feedback' %>
+  </p>
+  <% end %>
+  <p class="bottom">
+    <%= f.submit 'Enviar' %> <%= link_to 'Cancelar', root_path %>
+  </p>
+<% end %>
+
