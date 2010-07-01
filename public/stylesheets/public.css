@@ -248,27 +248,27 @@ h1 {
   width: 113px;
   background: transparent url(../images/nav_white.gif) -139px 0 no-repeat;
 }
-#nav_experiencias a {
+#nav_experiencia a {
   width: 135px;
   background: transparent url(../images/nav_grey.gif) -253px 0 no-repeat;
 }
-#nav_experiencias a:hover {
+#nav_experiencia a:hover {
   width: 135px;
   background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;
 }
-#nav_experiencias span {
+#nav_experiencia span {
   width: 135px;
   background: transparent url(../images/nav_white.gif) -253px 0 no-repeat;
 }
-#nav_dineros a {
+#nav_dinero a {
   width: 95px;
   background: transparent url(../images/nav_grey.gif) -388px 0 no-repeat;
 }
-#nav_dineros a:hover {
+#nav_dinero a:hover {
   width: 95px;
   background: transparent url(../images/nav_white.gif) -388px 0 no-repeat;
 }
-#nav_dineros span {
+#nav_dinero span {
   width: 95px;
   background: transparent url(../images/nav_white.gif) -388px 0 no-repeat;
 }

@@ -9,12 +9,80 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100701170310) do
+ActiveRecord::Schema.define(:version => 20100701173843) do
 
   create_table "feedbacks", :force => true do |t|
     t.integer  "user_id"
     t.text     "body"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_experiencias", :force => true do |t|
+    t.string   "studies",                     :limit => 32
+    t.boolean  "studies_eso"
+    t.boolean  "studies_bachiller"
+    t.boolean  "studies_fp_medio"
+    t.boolean  "studies_fp_superior"
+    t.boolean  "studies_uni_completa"
+    t.boolean  "studies_uni_incompleta"
+    t.boolean  "studies_postgrado"
+    t.boolean  "studies_doctorado"
+    t.string   "studies_eval_academica",      :limit => 4
+    t.string   "studies_eval_transmision",    :limit => 4
+    t.string   "studies_eval_talleres",       :limit => 4
+    t.string   "studies_eval_empleo",         :limit => 4
+    t.string   "studies_eval_aprendizaje",    :limit => 4
+    t.string   "studies_eval_internet",       :limit => 4
+    t.string   "studies_eval_biblioteca",     :limit => 4
+    t.text     "studies_eval_desc"
+    t.string   "formation",                   :limit => 4
+    t.text     "formation_desc"
+    t.boolean  "formation_kind_course"
+    t.boolean  "formation_kind_exchange"
+    t.boolean  "formation_kind_auto"
+    t.boolean  "formation_kind_net"
+    t.text     "formation_kind_desc"
+    t.string   "formation_done_name_1",       :limit => 32
+    t.string   "formation_done_name_2",       :limit => 32
+    t.string   "formation_done_name_3",       :limit => 32
+    t.string   "formation_done_name_4",       :limit => 32
+    t.string   "formation_done_name_5",       :limit => 32
+    t.string   "formation_done_duration_1",   :limit => 32
+    t.string   "formation_done_duration_2",   :limit => 32
+    t.string   "formation_done_duration_3",   :limit => 32
+    t.string   "formation_done_duration_4",   :limit => 32
+    t.string   "formation_done_duration_5",   :limit => 32
+    t.string   "formation_done_entity_1",     :limit => 32
+    t.string   "formation_done_entity_2",     :limit => 32
+    t.string   "formation_done_entity_3",     :limit => 32
+    t.string   "formation_done_entity_4",     :limit => 32
+    t.string   "formation_done_entity_5",     :limit => 32
+    t.string   "formation_done_amount_1",     :limit => 32
+    t.string   "formation_done_amount_2",     :limit => 32
+    t.string   "formation_done_amount_3",     :limit => 32
+    t.string   "formation_done_amount_4",     :limit => 32
+    t.string   "formation_done_amount_5",     :limit => 32
+    t.string   "formation_done_evaluation_1", :limit => 32
+    t.string   "formation_done_evaluation_2", :limit => 32
+    t.string   "formation_done_evaluation_3", :limit => 32
+    t.string   "formation_done_evaluation_4", :limit => 32
+    t.string   "formation_done_evaluation_5", :limit => 32
+    t.string   "formation_week",              :limit => 8
+    t.text     "formation_week_desc"
+    t.string   "formation_paid_company",      :limit => 16
+    t.string   "formation_paid_grant",        :limit => 16
+    t.string   "formation_paid_client",       :limit => 16
+    t.string   "formation_paid_not",          :limit => 16
+    t.string   "formation_part",              :limit => 8
+    t.string   "form_access_money"
+    t.string   "form_access_offer"
+    t.string   "form_access_info"
+    t.string   "form_access_time"
+    t.string   "form_access_geo"
+    t.text     "form_access_desc"
+    t.text     "formation_love"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
