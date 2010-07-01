@@ -9,12 +9,53 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100701173843) do
+ActiveRecord::Schema.define(:version => 20100701182533) do
 
   create_table "feedbacks", :force => true do |t|
     t.integer  "user_id"
     t.text     "body"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_dineros", :force => true do |t|
+    t.boolean  "laboral_entrepreneur"
+    t.boolean  "laboral_employe"
+    t.boolean  "laboral_various"
+    t.boolean  "laboral_one"
+    t.boolean  "laboral_black"
+    t.text     "laboral_others"
+    t.string   "ajob",                        :limit => 8
+    t.string   "ajob_time",                   :limit => 8
+    t.string   "ajob_xtra_night",             :limit => 16
+    t.string   "ajob_xtra_holiday",           :limit => 16
+    t.string   "ajob_xtra_overtime",          :limit => 16
+    t.string   "ajob_xtra_paid",              :limit => 16
+    t.string   "ajob_money",                  :limit => 16
+    t.string   "ajob_decision",               :limit => 16
+    t.text     "gestation"
+    t.string   "ajob_vocation",               :limit => 8
+    t.boolean  "ajob_vocation_money_family"
+    t.boolean  "ajob_vocation_money_work"
+    t.boolean  "ajob_vocation_money_grant"
+    t.boolean  "ajob_vocation_money_sponsor"
+    t.boolean  "ajob_vocation_money_sale"
+    t.text     "ajob_vocation_money_desc"
+    t.string   "grants",                      :limit => 8
+    t.text     "grants_who"
+    t.boolean  "grants_bad_grantpoor"
+    t.boolean  "grants_bad_grantoffer"
+    t.boolean  "grants_bad_grantcriteria"
+    t.boolean  "grants_bad_grantinfo"
+    t.boolean  "grants_bad_granttime"
+    t.boolean  "grants_bad_grantgeo"
+    t.boolean  "grants_bad_grantage"
+    t.text     "grants_bad_desc"
+    t.string   "bjob",                        :limit => 8
+    t.text     "bjob_which"
+    t.string   "bjob_time",                   :limit => 16
+    t.string   "bjob_money",                  :limit => 16
     t.datetime "created_at"
     t.datetime "updated_at"
   end
