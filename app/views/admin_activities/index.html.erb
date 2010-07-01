@@ -11,7 +11,7 @@
   <tbody>
     <% @activities.each do |a| %>
     <tr class="activity <%= a.category %>">
-      <td><%= h a.created_at.fecha %></td>
+      <td>Hace <%= time_ago_in_words a.created_at %></td>
       <td><%= h a.description %></td>
       <td><%= link_to a.url, a.url if a.url %></td>
     </tr>

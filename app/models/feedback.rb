@@ -3,11 +3,11 @@ class Feedback < ActiveRecord::Base
   
   def author
     if self.user
-      "#{self.user.username} (#{self.user.email})"
-    elsif self.email.blank?
-      "alguien en #{self.email}"
+      "el participante '#{self.user.username}' (#{self.user.email})"
+    elsif !self.email.blank?
+      "desde #{self.email}"
     else
-      'alguien anónimamente'
+      'una persona anónima'
     end
 
   end

@@ -12,7 +12,7 @@
   <tbody>
     <% @feedbacks.each do |feedback| %>
       <tr>
-        <td><%= time_ago_in_words feedback.created_at %></td>
+        <td>Hace <%= time_ago_in_words feedback.created_at %></td>
         <td><%= feedback.author %></td>
         <td><%= h feedback.body %></td>
         <td></td>
