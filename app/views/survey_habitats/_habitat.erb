@@ -1,0 +1,128 @@
+
+<p>
+  <%= form.label :place %>
+  <% SurveyHabitat::HABITATS.each do |topic| %>
+    <%= form.radio_button "place", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :place_desc %>
+  <%= form.text_area :place_desc %>
+</p>
+
+<p>
+  <%= form.label :city_work %>
+  <%= form.text_area :city_work %>
+</p>
+
+
+<p>
+  <%= form.label :culture_infra %>
+  <% SurveyHabitat::CULTURE_INFRA.each do |topic| %>
+    <%= form.check_box "culture_infra_#{topic}" %>
+    <%= form.label "culture_infra_#{topic}", nil, :class => 'checkbox' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :culture_infra_work %>
+  <%= form.text_area :culture_infra_work %>
+</p>
+
+<p>
+  <%= form.label :homes %>
+  <% SurveyHabitat::HOMES.each do |topic| %>
+    <%= form.radio_button "homes", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :living %>
+  <% SurveyHabitat::LIVING.each do |topic| %>
+    <%= form.radio_button "living", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :living_desc %>
+  <%= form.text_field :living_desc %>
+</p>
+
+<p>
+  <%= form.label :living_share %>
+  <%= form.text_field :living_share %>
+</p>
+
+<p>
+  <%= form.label :home_cost %>
+  <% SurveyHabitat::HOME_COST.each do |topic| %>
+    <%= form.radio_button "home_cost", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :studio %>
+  <% SurveyHabitat::STUDIO.each do |topic| %>
+    <%= form.radio_button "studio", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :studio_other %>
+  <%= form.text_area :studio_other %>
+</p>
+
+<p>
+  <%= form.label :studio_share %>
+  <%= form.radio_button :studio_share, :yes %>
+  <%= form.label :studio_share_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :studio_share, :no %>
+  <%= form.label :studio_share_no, nil, :class => 'radio' %>
+</p>
+
+<p>
+  <%= form.label :studio_share_desc %>
+  <%= form.text_field :studio_share_desc %>
+</p>
+
+<p>
+  <%= form.label :studio_cost %>
+  <% SurveyHabitat::HOME_COST.each do |topic| %>
+    <%= form.radio_button "studio_cost", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :expenses %>
+<table>
+  <% SurveyHabitat::EXPENSES.each do |expenses| %>
+    <tr>
+      <td class="else">    <%= form.label expenses %></td>
+      <td><%= form.text_field expenses %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <%= form.label :travel %>
+  <% SurveyHabitat::TRAVEL.each do |topic| %>
+    <%= form.radio_button "travel", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :income %>
+  <%= form.radio_button :income, :yes %>
+    <%= form.label :income_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :income, :no %>
+    <%= form.label :income_no, nil, :class => 'radio' %>
+</p>

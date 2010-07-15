@@ -1,2 +1,0 @@
-class SurveyHabitatController < ApplicationController
-end

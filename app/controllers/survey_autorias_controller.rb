@@ -1,5 +1,5 @@
 class SurveyAutoriasController < ApplicationController
-    layout 'survey'
+  layout 'survey'
   inherit_resources
   actions :update, :show
 

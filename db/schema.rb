@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100715103600) do
+ActiveRecord::Schema.define(:version => 20100715112901) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -152,6 +152,41 @@ ActiveRecord::Schema.define(:version => 20100715103600) do
     t.string   "form_access_geo"
     t.text     "form_access_desc"
     t.text     "formation_love"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_habitats", :force => true do |t|
+    t.string   "place",                    :limit => 32
+    t.text     "place_desc"
+    t.text     "city_work"
+    t.boolean  "culture_infra_cinema",                    :default => false
+    t.boolean  "culture_infra_concert",                   :default => false
+    t.boolean  "culture_infra_theater",                   :default => false
+    t.boolean  "culture_infra_biblio",                    :default => false
+    t.boolean  "culture_infra_exhibition",                :default => false
+    t.boolean  "culture_infra_space",                     :default => false
+    t.boolean  "culture_infra_museum",                    :default => false
+    t.boolean  "culture_infra_internet",                  :default => false
+    t.boolean  "culture_infra_social",                    :default => false
+    t.text     "culture_infra_work"
+    t.string   "homes",                    :limit => 32
+    t.string   "living",                   :limit => 32
+    t.text     "living_desc"
+    t.text     "living_share"
+    t.string   "home_cost",                :limit => 32
+    t.string   "studio",                   :limit => 32
+    t.text     "studio_other"
+    t.string   "studio_share",             :limit => 32
+    t.text     "studio_share_desc"
+    t.string   "studio_cost",              :limit => 32
+    t.string   "promotion",                :limit => 512
+    t.string   "telecom",                  :limit => 512
+    t.string   "formation",                :limit => 512
+    t.string   "mobility",                 :limit => 512
+    t.string   "material",                 :limit => 512
+    t.string   "travel",                   :limit => 32
+    t.string   "income",                   :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end
