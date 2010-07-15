@@ -1,0 +1,46 @@
+
+  <p>
+    <%= form.label :author %>
+    <% SurveyAutoria::AUTHORS.each do |topic| %>
+      <%= form.check_box "author_#{topic}" %>
+    <%= form.label "author_#{topic}", nil, :class => 'radio' %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= form.label :author_desc %>
+    <%= form.text_area :author_desc %>
+  </p>
+
+  <p>
+    <%= form.label :copyright_why %>
+    <%= form.text_area :copyright_why %>
+  </p>
+
+  <p>
+    <%= form.label :cc %>
+    <%= form.text_area :cc %>
+  </p>
+
+  <p>
+    <%= form.label :cc_desc %>
+    <%= form.text_area :cc_desc %>
+  </p>
+
+  <p>
+    <%= form.label :author_asoc %>
+    <%= form.radio_button :author_asoc, :yes %><%= form.label :author_asoc_yes, nil, :class => 'radio' %>
+    <%= form.radio_button :author_asoc, :no %><%= form.label :author_asoc_no, nil, :class => 'radio' %>
+  </p>
+
+  <p>
+    <%= form.label :author_asoc_desc %>
+    <%= form.text_area :author_asoc_desc %>
+  </p>
+
+  <p>
+    <%= form.label :author_asoc_why %>
+    <%= form.text_area :author_asoc_why %>
+  </p>
+
+

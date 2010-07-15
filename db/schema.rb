@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100701190709) do
+ActiveRecord::Schema.define(:version => 20100715103600) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(:version => 20100701190709) do
     t.integer  "user_id"
     t.text     "body"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_autorias", :force => true do |t|
+    t.boolean  "author_none",       :default => false
+    t.boolean  "author_various",    :default => false
+    t.boolean  "author_alias",      :default => false
+    t.boolean  "author_collective", :default => false
+    t.boolean  "author_name",       :default => false
+    t.boolean  "author_company",    :default => false
+    t.text     "author_desc"
+    t.text     "copyright_why"
+    t.text     "cc"
+    t.text     "cc_desc"
+    t.boolean  "author_asoc"
+    t.text     "author_asoc_desc"
+    t.text     "author_asoc_why"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
