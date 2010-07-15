@@ -1,6 +1,8 @@
 class CreateSurveyAutorias < ActiveRecord::Migration
   def self.up
     create_table :survey_autorias do |t|
+      t.references :user
+
       SurveyAutoria::AUTHORS.each do |topic|
         t.boolean "author_#{topic}", :default => false
       end

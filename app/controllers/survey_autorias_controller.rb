@@ -13,7 +13,7 @@ class SurveyAutoriasController < ApplicationController
   end
 
   def update
-    update!(:notice => "Cuestionario guardado. Por favor continúa con el de 'Tumismx'") { view_survey_tumisma_path }
-    Activity.create(:description => "#{current_user.username} ha modificado su 'Presentación'", :category => 'update', :url => url_for(@survey))
+    update!(:notice => "Cuestionario guardado. Por favor continúa con el de 'Hábitat'") { view_survey_habitat_path }
+    Activity.create(:description => "#{current_user.username} ha modificado su 'Autoría'", :category => 'update', :url => url_for(@survey))
   end
 end

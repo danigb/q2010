@@ -1,6 +1,8 @@
 class CreateSurveyComuns < ActiveRecord::Migration
   def self.up
     create_table :survey_comuns do |t|
+      t.references :user
+
       t.text :institution
       SurveyComun::POLICY.each do |topic|
         t.string "policy_#{topic}", :limit => 8

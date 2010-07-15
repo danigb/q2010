@@ -13,7 +13,7 @@ class SurveyComunsController < ApplicationController
   end
 
   def update
-    update!(:notice => "Cuestionario guardado. Por favor continúa con el de 'Tumismx'") { view_survey_tumisma_path }
+    update!(:notice => "Cuestionario guardado. Muchas gracias!") { finished_path }
     Activity.create(:description => "#{current_user.username} ha modificado su 'Común'", :category => 'update', :url => url_for(@survey))
   end
 end

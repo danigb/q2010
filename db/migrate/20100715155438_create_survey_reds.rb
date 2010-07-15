@@ -1,6 +1,8 @@
 class CreateSurveyReds < ActiveRecord::Migration
   def self.up
     create_table :survey_reds do |t|
+      t.references :user
+
       t.string :computer, :limit => 16
       t.string :operating, :limit => 32
       t.text :operating_desc

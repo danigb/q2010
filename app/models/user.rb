@@ -2,12 +2,11 @@ class User < ActiveRecord::Base
   acts_as_authentic
   attr_accessible :username, :email, :password, :password_confirmation, :request_info, :allow_publish
 
-  def survey_presentacion
-    survey(SurveyPresentacion)
-  end
-
-  def survey_tumisma
-    survey(SurveyTumisma)
+  Survey::CUESTIONARIOS.each do |survey|
+    klass = "survey_#{survey}".camelize.constantize
+    define_method "survey_#{survey}" do
+      survey(klass)
+    end
   end
 
   private

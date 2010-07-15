@@ -1,6 +1,8 @@
 class CreateSurveyHabitats < ActiveRecord::Migration
   def self.up
     create_table :survey_habitats do |t|
+      t.references :user
+
       t.string :place, :limit => 32
       t.text :place_desc
       t.text :city_work

@@ -1,0 +1,119 @@
+
+<p>
+  <%= form.label :birth %>
+  <%= form.text_field :birth %>
+</p>
+
+<p>
+  <%= form.label :gender %>
+  <%= form.text_field :gender %>
+</p>
+
+<p>
+  <%= form.label :since %>
+  <%= form.text_field :since %>
+</p>
+
+<p>
+  <%= form.label :books %>
+  <%= form.text_area :books %>
+</p>
+
+<p>
+  <%= form.label :films %>
+  <%= form.text_area :films %>
+</p>
+
+<p>
+  <%= form.label :musics %>
+  <%= form.text_area :musics %>
+</p>
+
+<p>
+  <%= form.label :movements %>
+  <%= form.text_area :movements %>
+</p>
+
+<p>
+  <%= form.label :influences %>
+  <%= form.text_area :influences %>
+</p>
+
+<p>
+  <%= form.label :ilike %>
+  <%= form.text_area :ilike %>
+</p>
+
+<p>
+  <%= form.label :dislike %>
+  <%= form.text_area :dislike %>
+</p>
+
+<p>
+  <%= form.label :isdifferent %>
+  <%= form.radio_button :isdifferent, :yes %><label class="radio">Sí</label>
+  <%= form.radio_button :isdifferent, :no %><label class="radio">No</label>
+</p>
+
+<p>
+  <%= form.label :isdifferent_desc %>
+  <%= form.text_area :isdifferent_desc %>
+</p>
+
+<p>
+  <%= form.label :proj_good %>
+  <%= form.text_area :proj_good %>
+</p>
+<p>
+  <%= form.label :proj_good_att %>
+  <%= form.text_field :proj_good_att, :class => 'upload_file',  :id => 'upload_proj_good' %>
+</p>
+
+<p>
+  <%= form.label :proj_bad %>
+  <%= form.text_area :proj_bad %>
+</p>
+<p>
+  <%= form.label :proj_bad_att %>
+  <%= form.text_field :proj_bad_att, :class => 'upload_file',  :id => 'upload_proj_bad' %>
+</p>
+
+<p>
+  <%= form.label :diffusion %>
+  <%= form.text_area :diffusion %>
+</p>
+
+<p>
+  <%= form.label :traject_eval %>
+<table>
+  <thead>
+  </thead>
+  <% SurveyTumisma::TRAJECT_EVAL.each do |topic| %>
+    <tr>
+      <td><%= form.label("traject_eval_#{topic}") %></td>
+      <% Survey::RELEVANCE.each do |relevance| %>
+        <td class="<%= relevance %>">
+          <%= form.radio_button "traject_eval_#{topic}", relevance %>
+          <span class="tooltip"><%= t(relevance) %> </span>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <%= form.label :traject_eval_desc %>
+  <%= form.text_area :traject_eval_desc %>
+</p>
+
+<p>
+  <%= form.label :gender_influence %>
+  <%= form.radio_button :gender_influence, :yes %><label class="radio">Sí</label>
+  <%= form.radio_button :gender_influence, :no %><label class="radio">No</label>
+</p>
+
+<p>
+  <%= form.label :gender_influence_desc %>
+  <%= form.text_area :gender_influence_desc %>
+</p>

@@ -5,7 +5,7 @@ class SurveyPresentacionsController < ApplicationController
 
   def edit
     @survey = current_user ? current_user.survey_presentacion :  SurveyPresentacion.new
-    render :action => 'presentacion_edit'
+    render :action => 'edit'
   end
 
   def show

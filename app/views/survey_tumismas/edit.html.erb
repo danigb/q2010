@@ -1,0 +1,11 @@
+<% title("Tu mismx") %>
+
+<% form_for @survey do |form| %>
+  <%#= next_step cuestionario_path(:id => 'presentacion') %>
+
+  <%= save_or_preview_survey(form) %>
+  <%= render 'tumisma', :form => form %>
+  <%= save_survey(form) %>
+
+
+<% end %>

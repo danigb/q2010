@@ -129,6 +129,7 @@ es:
         form_access_geo: "Aislamiento territorial"
         form_access_desc: "Otros problemas para acceder a la formación"
         formation_love: "¿A qué talleres o ciclos te gustaría asistir o generar? (Especifica tres)"
+        
       survey_dinero:
         title: "Dineros"
         laboral: "Estatuto laboral:"
@@ -219,6 +220,7 @@ es:
         author_asoc_no: "No"
         author_asoc_desc: "¿Cuál?"
         author_asoc_why: "¿Por qué?"
+
       survey_habitat:
         place: "Vives en"
         suburb: "Capital - periferia"

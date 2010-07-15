@@ -1,21 +1,8 @@
-<% title 'Experiencias' %>
-
-<% form_for @survey do |form| %>
-  <%#= next_step cuestionario_path(:id => 'experiencias') %>
-
-
-  <% if current_user %>
-    <p class="submit">
-      <%= form.submit "Guardar" %><span><%= t(:submit_info) %></span>
-    </p>
-  <% else %>
-    <%= render '/surveys/preview' %>
-  <% end %>
 
   <p>
     <%= form.label :studies %>
     <% SurveyExperiencia::STUDY_CYCLES.each do |name| %>
-      <%= form.check_box name %><label class="radio"><%= SurveyExperiencia.human_attribute_name(name) %></label>
+      <%= form.check_box name %><%= form.label name, nil, :class => 'radio' %>
     <% end %>
   </p>
 
@@ -59,10 +46,10 @@
 
   <p>
     <%= form.label :formation_kind %>
-    <%= form.check_box :formation_kind_course %><label class="checkbox"><%= SurveyExperiencia.human_attribute_name(:formation_kind_course) %></label>
-    <%= form.check_box :formation_kind_exchange %><label class="checkbox"><%= SurveyExperiencia.human_attribute_name(:formation_kind_exchange) %></label>
-    <%= form.check_box :formation_kind_auto %><label class="checkbox"><%= SurveyExperiencia.human_attribute_name(:formation_kind_auto) %></label>
-    <%= form.check_box :formation_kind_net %><label class="checkbox"><%= SurveyExperiencia.human_attribute_name(:formation_kind_net) %></label>
+    <%= form.check_box :formation_kind_course %><%= form.label :formation_kind_course, nil, :class => 'checkbox' %>
+    <%= form.check_box :formation_kind_exchange %><%= form.label :formation_kind_exchange, nil, :class => 'checkbox' %>
+    <%= form.check_box :formation_kind_auto %><%= form.label :formation_kind_auto, nil, :class => 'checkbox' %>
+    <%= form.check_box :formation_kind_net %><%= form.label :formation_kind_net, nil, :class => 'checkbox' %>
   </p>
 
   <p>
@@ -92,11 +79,11 @@
 
   <p>
     <%= form.label :formation_week %>
-    <%= form.radio_button :formation_week, 'none' %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_week_none) %></label>
-    <%= form.radio_button :formation_week, '1to3' %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_week_1to3) %></label>
-    <%= form.radio_button :formation_week, '3to5' %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_week_3to5) %></label>
-    <%= form.radio_button :formation_week, '5to8' %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_week_5to8) %></label>
-    <%= form.radio_button :formation_week, 'more8' %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_week_more8) %></label>
+    <%= form.radio_button :formation_week, 'none' %><%= form.label :formation_week_none, nil, :class => 'radio' %>
+    <%= form.radio_button :formation_week, '1to3' %><%= form.label :formation_week_1to3, nil, :class => 'radio' %>
+    <%= form.radio_button :formation_week, '3to5' %><%= form.label :formation_week_3to5, nil, :class => 'radio' %>
+    <%= form.radio_button :formation_week, '5to8' %><%= form.label :formation_week_5to8, nil, :class => 'radio' %>
+    <%= form.radio_button :formation_week, 'more8' %><%= form.label :formation_week_more8, nil, :class => 'radio' %>
   </p>
 
   <p>
@@ -114,8 +101,8 @@
 
   <p>
     <%= form.label :formation_part %>
-    <%= form.radio_button :formation_part, :yes %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_part_yes) %></label>
-    <%= form.radio_button :formation_part, :no %><label class="radio"><%= SurveyExperiencia.human_attribute_name(:formation_part_no) %></label>
+    <%= form.radio_button :formation_part, :yes %><%= form.label :formation_part_yes, nil, :class => 'radio' %>
+    <%= form.radio_button :formation_part, :no %><%= form.label :formation_part_no, nil, :class => 'radio' %>
   </p>
 
   <p>
@@ -135,13 +122,3 @@
     <%= form.label :formation_love %>
     <%= form.text_area :formation_love %>
   </p>
-
-  <% if current_user %>
-    <p class="submit bottom">
-      <%= form.submit "Guardar" %><span><%= t(:submit_info) %></span>
-    </p>
-  <% end %>
-
-
-
-<% end %>

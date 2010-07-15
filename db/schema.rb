@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
   end
 
   create_table "survey_autorias", :force => true do |t|
+    t.integer  "user_id"
     t.boolean  "author_none",       :default => false
     t.boolean  "author_various",    :default => false
     t.boolean  "author_alias",      :default => false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
   end
 
   create_table "survey_comuns", :force => true do |t|
+    t.integer  "user_id"
     t.text     "institution"
     t.string   "policy_access",                    :limit => 8
     t.string   "policy_extend",                    :limit => 8
@@ -204,6 +206,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
   end
 
   create_table "survey_habitats", :force => true do |t|
+    t.integer  "user_id"
     t.string   "place",                    :limit => 32
     t.text     "place_desc"
     t.text     "city_work"
@@ -285,6 +288,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
   end
 
   create_table "survey_reds", :force => true do |t|
+    t.integer  "user_id"
     t.string   "computer",       :limit => 16
     t.string   "operating",      :limit => 32
     t.text     "operating_desc"
