@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100715155438) do
+ActiveRecord::Schema.define(:version => 20100715161220) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -41,6 +41,53 @@ ActiveRecord::Schema.define(:version => 20100715155438) do
     t.boolean  "author_asoc"
     t.text     "author_asoc_desc"
     t.text     "author_asoc_why"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_comuns", :force => true do |t|
+    t.text     "institution"
+    t.string   "policy_access",                    :limit => 8
+    t.string   "policy_extend",                    :limit => 8
+    t.string   "policy_policy_future",             :limit => 8
+    t.string   "policy_work",                      :limit => 8
+    t.string   "policy_patrimony",                 :limit => 8
+    t.string   "culture_steps_budget",             :limit => 8
+    t.string   "culture_steps_sponsors",           :limit => 8
+    t.string   "culture_steps_space",              :limit => 8
+    t.string   "culture_steps_participate",        :limit => 8
+    t.string   "culture_steps_industry",           :limit => 8
+    t.string   "culture_steps_free_net",           :limit => 8
+    t.string   "culture_steps_pirate",             :limit => 8
+    t.string   "culture_steps_events",             :limit => 8
+    t.string   "culture_steps_law",                :limit => 8
+    t.text     "situation"
+    t.boolean  "culture_action_sindicate",                       :default => false
+    t.boolean  "culture_action_asociation",                      :default => false
+    t.boolean  "culture_action_movement",                        :default => false
+    t.boolean  "culture_action_group",                           :default => false
+    t.text     "culture_action_desc"
+    t.boolean  "polis_action_polis_manifestation",               :default => false
+    t.boolean  "polis_action_polis_act",                         :default => false
+    t.boolean  "polis_action_polis_campaign",                    :default => false
+    t.text     "polis_action_desc"
+    t.string   "conditions",                       :limit => 32
+    t.string   "administration_culture",           :limit => 16
+    t.string   "administration_home",              :limit => 16
+    t.string   "administration_inmigration",       :limit => 16
+    t.string   "administration_work",              :limit => 16
+    t.string   "administration_health",            :limit => 16
+    t.string   "administration_gender",            :limit => 16
+    t.boolean  "future_platform",                                :default => false
+    t.boolean  "future_asociation",                              :default => false
+    t.boolean  "future_syndicate",                               :default => false
+    t.boolean  "future_campaign",                                :default => false
+    t.boolean  "future_festival",                                :default => false
+    t.boolean  "future_ofices",                                  :default => false
+    t.boolean  "future_online",                                  :default => false
+    t.boolean  "future_ocupy",                                   :default => false
+    t.text     "future_desc"
+    t.text     "proposal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,120 @@
+
+
+<p>
+  <%= form.label :institution %>
+  <%= form.text_area :institution %>
+</p>
+
+<p>
+  <%= form.label :policy %>
+<table>
+  <thead>
+  </thead>
+  <% SurveyComun::POLICY.each do |topic| %>
+    <tr>
+      <td><%= form.label topic %></td>
+      <% Survey::RELEVANCE.each do |relevance| %>
+        <td class="<%= relevance %> radio"><%= form.radio_button "policy_#{topic}", relevance %>
+          <span class="tooltip"><%= t(relevance) %> </span></td>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <%= form.label :culture_steps %>
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <% SurveyComun::CULTURE_STEPS.each do |topic| %>
+    <tr>
+      <td><%= form.label ("culture_steps_#{topic}") %></td>
+      <% Survey::RELEVANCE.each do |relevance| %>
+        <td class="<%= relevance %> radio"><%= form.radio_button "culture_steps_#{topic}", relevance %>
+          <span class="tooltip"><%= t(relevance) %> </span></td>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <%= form.label :situation %>
+  <%= form.text_area :situation %>
+</p>
+
+<p>
+  <%= form.label :culture_action %>
+  <% SurveyComun::CULTURE_ACTION.each do |topic| %>
+    <%= form.check_box "culture_action_#{topic}" %>
+    <%= form.label "culture_action_#{topic}", nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :culture_action_desc %>
+  <%= form.text_area :culture_action_desc %>
+</p>
+
+<p>
+  <%= form.label :polis_action %>
+  <% SurveyComun::POLIS_ACTION.each do |topic| %>
+    <%= form.check_box "polis_action_#{topic}" %>
+    <%= form.label "polis_action_#{topic}", nil, :class => 'checkbox' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :polis_action_desc %>
+  <%= form.text_area :polis_action_desc %>
+</p>
+
+<p>
+  <%= form.label :conditions %>
+  <% SurveyComun::CONDITIONS.each do |topic| %>
+    <%= form.radio_button "conditions", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :administration %>
+<table>
+  <thead>
+  </thead>
+  <% SurveyComun::ADMINISTRATION.each do |topic| %>
+    <tr>
+      <td><%= form.label topic %></td>
+      <% Survey::QUALITY.each do |quality| %>
+        <td class="<%= quality %> radio"><%= form.radio_button "administration_#{topic}", quality %>
+          <span class="tooltip"><%= t(quality) %> </span></td>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <%= form.label :future %>
+  <%SurveyComun::FUTURE.each do |topic| %>
+    <%= form.check_box "future_#{topic}" %>
+    <%= form.label "future_#{topic}", nil, :class => 'checkbox' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :future_desc %>
+  <%= form.text_area :future_desc %>
+</p>
+
+<p>
+  <%= form.label :proposal %>
+  <%= form.text_area :proposal %>
+</p>
+
