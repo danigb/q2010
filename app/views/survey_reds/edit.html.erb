@@ -1,0 +1,8 @@
+<% title("Redes") %>
+
+<% form_for @survey do |form| %>
+  <%#= next_step cuestionario_path(:id => 'presentacion') %>
+  <%= save_or_preview_survey(form) %>
+  <%= render 'red', :form => form %>
+  <%= save_survey(form) %>
+<% end %>

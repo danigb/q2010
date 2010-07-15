@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100715112901) do
+ActiveRecord::Schema.define(:version => 20100715155438) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -233,6 +233,23 @@ ActiveRecord::Schema.define(:version => 20100715112901) do
     t.boolean  "activity_actividad_otros",                        :default => false
     t.string   "actividad_otros",                 :limit => 256
     t.string   "interest",                        :limit => 1024
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_reds", :force => true do |t|
+    t.string   "computer",       :limit => 16
+    t.string   "operating",      :limit => 32
+    t.text     "operating_desc"
+    t.boolean  "internet_home",                :default => false
+    t.boolean  "internet_cyber",               :default => false
+    t.boolean  "internet_work",                :default => false
+    t.text     "internet_desc"
+    t.string   "internet_time",  :limit => 32
+    t.text     "web_links"
+    t.string   "p2p",            :limit => 32
+    t.string   "access",         :limit => 32
+    t.string   "web_find",       :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end

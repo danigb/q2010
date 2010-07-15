@@ -1,0 +1,71 @@
+
+<p>
+  <%= form.label :computer %>
+  <%= form.radio_button :computer, :yes %>
+  <%= form.label :computer_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :computer, :no %>
+  <%= form.label :computer_no, nil, :class => 'radio' %>
+</p>
+
+<p>
+  <%= form.label :operating %>
+  <% SurveyRed::OPERATING.each do |topic| %>
+    <%= form.radio_button "operating", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :operating_desc %>
+  <%= form.text_area :operating_desc %>
+</p>
+
+<p>
+  <%= form.label :internet %>
+  <% SurveyRed::INTERNET.each do |topic| %>
+    <%= form.check_box  "internet_#{topic}" %>
+    <%= form.label topic, nil, :class => 'checkbox' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :internet_desc %>
+  <%= form.text_area :internet_desc %>
+</p>
+
+<p>
+  <%= form.label :internet_time %>
+  <% SurveyRed::INTERNET_TIME.each do |topic| %>
+    <%= form.radio_button "internet_time", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :web_links %>
+  <%= form.text_area :web_links %>
+</p>
+
+<p>
+  <%= form.label :p2p %>
+  <% SurveyRed::P2P.each do |topic| %>
+    <%= form.radio_button "p2p", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :access %>
+  <% SurveyRed::ACCESS.each do |topic| %>
+    <%= form.radio_button "access", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
+
+<p>
+  <%= form.label :web_find %>
+  <%= form.radio_button :web_find, :yes %>
+  <%= form.label :web_find_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :web_find, :no %>
+  <%= form.label :web_find_no, nil, :class => 'radio' %>
+</p>
