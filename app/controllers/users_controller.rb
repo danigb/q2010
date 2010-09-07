@@ -13,5 +13,6 @@ class UsersController < ApplicationController
 
   def create
     create!(:notice => "Gracias por darte de alta") { view_survey_presentacion_path }
+    Activity.create(:description => "#{@user.username} se ha dado de alta", :category => 'create_user', :url => admin_users_url) if @user && @user.valid?
   end
 end
