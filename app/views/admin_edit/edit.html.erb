@@ -1,0 +1,13 @@
+<% title"SUDO #{@survey.class}" %>
+
+<h2><%= @survey.user.username %></h2>
+<% Survey::CUESTIONARIOS.each do |name| %>
+  > <%= link_to Survey.name_of(name), "/sudo/#{name}/#{@survey.user.id}" %>
+<% end %>
+
+<% form_for(@survey, :url => sudo_update_path(@survey.id)) do |form| %>
+  <%= hidden_field_tag :klass, @survey.class   %>
+  <%= form.submit 'Guardar SUDO' %>
+  <br/><br/>
+  <%= render "/survey_#{@name}s/#{@name}", :form => form %>
+<% end %>

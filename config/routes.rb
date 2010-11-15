@@ -24,5 +24,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :admin_feedbacks, :as => 'mensajes', :path_prefix => 'admin', :controller => 'admin_feedbacks'
   map.resources :admin_surveys, :as => 'cuestionarios', :path_prefix => 'admin', :controller => 'admin_surveys'
 
-
+  map.connect '/sudo/:name/:user', :controller => 'admin_edit', :action => 'edit'
+  map.sudo_update '/sudo/:id', :controller => 'admin_edit', :action => 'update'
 end

@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/r08.ico" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <title><%= yield(:title) || 'Bienvenida' %> - Reu08 Cuestionario Online </title>
     <%= stylesheet_link_tag 'public' %>
@@ -14,6 +13,7 @@
         #banner {background-image: <%= "url(/images/headers/#{@image}_header.jpg)" %> }
       </style>
     <% end %>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <div id="banner">

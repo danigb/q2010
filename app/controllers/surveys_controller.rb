@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   layout 'basic'
-  before_filter :require_user
+  before_filter :require_user, :except => :update
+  before_filter :require_admin, :only => :update
 
   def index
     if current_user.survey_completed?
