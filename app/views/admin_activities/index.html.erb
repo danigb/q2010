@@ -1,20 +1,25 @@
 <% title('Actividad del sitio') %>
 
+<div class="actions">
+  <%= link_to 'Limpiar registro de actividad', limpiar_admin_activities_path,:confirm => "¿Quieres limpiar el registro de actividad?", :method => :delete, :class => 'button' %>
+</div>
+
 <table>
   <thead>
     <tr>
       <td>Cuándo</td>
       <td>Qué</td>
       <td>Enlace</td>
+      <td></td>
     </tr>
   </thead>
   <tbody>
     <% @activities.each do |a| %>
-    <tr class="activity <%= a.category %>">
-      <td>Hace <%= time_ago_in_words a.created_at %></td>
-      <td><%= h a.description %></td>
-      <td><%= link_to a.url, a.url if a.url %></td>
-    </tr>
+      <tr class="activity <%= a.category %>">
+        <td>Hace <%= time_ago_in_words a.created_at %></td>
+        <td><%= h a.description %></td>
+        <td><%= link_to a.url, a.url if a.url %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

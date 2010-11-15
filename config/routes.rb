@@ -18,7 +18,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # admin
   map.admin '/admin', :controller => 'admin_activities'
-  map.resources :admin_activities, :as => 'actividad', :path_prefix => 'admin', :controller => 'admin_activities'
+  map.resources :admin_activities, :as => 'actividad', :path_prefix => 'admin', :controller => 'admin_activities',
+    :collection => {:limpiar => :delete}
   map.resources :admin_users, :as => 'usuarios', :path_prefix => 'admin', :controller => 'admin_users'
   map.resources :admin_feedbacks, :as => 'mensajes', :path_prefix => 'admin', :controller => 'admin_feedbacks'
   map.resources :admin_surveys, :as => 'cuestionarios', :path_prefix => 'admin', :controller => 'admin_surveys'

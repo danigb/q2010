@@ -1,6 +1,6 @@
 
 <div class="dialog">
-  <% form_for @user, user_path do |form| %>
+  <% form_for @user, :url => user_path do |form| %>
     <%= form.error_messages %>
     <p>
       <%= form.label :username, t('.username') %>

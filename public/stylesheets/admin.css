@@ -61,6 +61,21 @@ a:hover { text-decoration: underline; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.button {
+  border: 2px #cccccc;
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  background-color: #e1e4e4;
+  color: #cdd4dc;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+}
+a.button {
+  display: block;
+  float: left;
+}
 html {
   font-size: 90%;
   font-family: Georgia, Cambria, Times, serif;

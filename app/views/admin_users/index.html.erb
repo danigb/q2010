@@ -16,7 +16,6 @@
         <td><%= user.created_at.fecha %></td>
         <td><%= user.survey_completed? ? 'Si' : 'No' %></td>
         <td>
-          <%= link_to t('app.view'), admin_user_path(user) %>
           <%= link_to 'Ver su cuestionario', admin_survey_path(user)  %>
         </td>
       </tr>
