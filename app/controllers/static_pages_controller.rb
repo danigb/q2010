@@ -1,6 +1,12 @@
 class StaticPagesController < ApplicationController
   layout 'basic'
-    before_filter :require_user, :only => [:finished]
+  before_filter :require_user, :only => [:finished]
+
+  caches_page :whosbehind
+
+  def whosbehind
+    
+  end
 
   def finished
     Activity.create(:description => "#{current_user.username} parece que ha completado su cuestionario", :category => 'survey_completed', :url => admin_user_path(current_user))
