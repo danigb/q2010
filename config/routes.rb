@@ -1,20 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.root :controller => 'static_pages', :action => 'whosbehind'
   map.finished '/cuestionario_finalizado', :controller => 'static_pages', :action => 'finished'
   
-  map.user 'yo', :controller => 'users', :action => 'show'
   map.login "entrar", :controller => "user_sessions", :action => "new"
   map.logout "salir", :controller => "user_sessions", :action => "destroy"
-  map.edit_profile "modificar_perfil", :controller => 'users', :action => 'edit'
 
   Survey::CUESTIONARIOS.each do |name|
     map.send("view_survey_#{name}".to_sym, "/cuestionario/#{name}", :controller => "survey_#{name}s", :action => 'edit')
     map.resources "survey_#{name}s", :as => name, :path_prefix => 'explorar'
   end
 
+  map.resource :user, :as => 'usuarix', :controller => 'user'
   map.resources :user_sessions, :as => 'sesion'
   map.resources :feedbacks, :as => 'comentarios'
-  map.resources :users, :as => 'usuarixs'
   map.resources :surveys, :as => 'cuestionarios'
 
   # admin

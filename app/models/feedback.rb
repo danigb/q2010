@@ -12,3 +12,16 @@ class Feedback < ActiveRecord::Base
 
   end
 end
+
+# == Schema Information
+#
+# Table name: feedbacks
+#
+#  id         :integer(4)      not null, primary key
+#  user_id    :integer(4)
+#  body       :text
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

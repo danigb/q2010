@@ -17,6 +17,17 @@ h1 {font-size: 200%; color: @medio;}
 /* ELEMENTOS GENERALES */
 .container { width: 960px; margin: 0 auto; }
 .column-1 { padding-left: 1em; padding-top: 1em; width: 900px;}
+.button {
+    border: 2px  #cccccc;
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    background-color: @oscuro;
+    color: #cdd4dc;
+    font-size: 75%;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.08em;
+    margin-top: 10px;
+    .round;
+}
 
 /* BARRA SUPERIOR */
 #banner {
@@ -134,7 +145,6 @@ h1 {font-size: 200%; color: @medio;}
     padding: 1em 0;
     margin-bottom: 1em;
     width: 70%;
-
 }
 
 /* FORMULARIOS */
@@ -149,6 +159,7 @@ form p label, .visualize p label {
     display: block; margin-top: 1.5em; margin-bottom: 0.3em;
     color: @medio; font-weight: bold; font-size: 90%;
 }
+form p a {padding-left: 1em; font-size: 80%;}
 form label.radio, form label.checkbox,  .visualize label.radio, .visualize label.checkbox {
     font-size: 12px;
     vertical-align: middle; color: @oscuro;
@@ -164,17 +175,7 @@ form input[type=text], form p input[type=password], form textarea {
     width: 80%;}
 form textarea {height: 4em; font-size: 85%;}
 
-form input[type=submit] {
-    border: 2px  #cccccc;
-    padding: 0.4em 0.7em 0.4em 0.7em;
-    background-color: @oscuro;
-    color: #cdd4dc;
-    font-size: 75%;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-    letter-spacing: 0.08em;
-    margin-top: 10px;
-    .round;
-}
+form input[type=submit] {.button;}
 
 form input[type=submit]:hover {
     color: white;
@@ -264,3 +265,8 @@ p.bottom {margin-top: 40px;}
 
 #credits {margin-top: 0.2em;}
 .calc {font-family: monospace; letter-spacing: 0.8em; font-size: 120%;}
+
+.properties {margin: 10px 10px; font-weight: bold; }
+.properties p {margin: 5px 0; font-size: 80%;}
+.properties label {font-weight: normal;}
+.properties a {font-weight: normal;}

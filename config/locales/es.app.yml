@@ -42,16 +42,18 @@ es:
   about:
     index:
       title: "¿Quien está detrás de la cultura? - Cuestionario"
-  users:
+  user:
     form:
       username: "Nombre de usuarix"
       email: "Correo electrónico"
       password: "Contraseña"
       password_confirmation: "Repite contraseña"
+      change_password: "Cambiar contraseña"
       signup: "Añadir"
       request_info: "Mantenerme informada por email del proceso de la coinvestigación y de eventos relacionados con la misma"
       allow_publish: "Permitir que los datos de 'Presentación' (y sólo éstos) aparezcan en la cartografía del territorio andaluz"
       options: "Opciones (se pueden modificar en cualquier momento)"
+      update: "Guardar"
     update: "Modificar"
     updated: "Tu perfil ha sido modificado."
     created: "Muchas gracias por registrarte. Puedes cambiar tus opciones pulsando sobre 'Editar Perfil'."

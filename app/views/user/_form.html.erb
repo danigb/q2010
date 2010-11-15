@@ -1,0 +1,34 @@
+
+<div class="dialog">
+  <% form_for @user, user_path do |form| %>
+    <%= form.error_messages %>
+    <p>
+      <%= form.label :username, t('.username') %>
+      <%= form.text_field :username %>
+    </p>
+    <p>
+      <%= form.label :email, t('.email') %>
+      <%= form.text_field :email %>
+    </p>
+    <p>
+      <%= form.label :password, t('.password') %>
+      <%= content_tag(:span, "Déjalo en blanco si no quieres cambiar la contraseña", :class => 'field_info') unless @user.new_record? %>
+      <%= form.password_field :password %>
+    </p>
+    <p>
+      <%= form.label :password_confirmation, t('.password_confirmation') %>
+      <%= content_tag(:span, "Déjalo en blanco si no quieres cambiar la contraseña", :class => 'field_info') unless @user.new_record? %>
+      <%= form.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= form.label :options, t('.options') %>
+      <%= form.check_box :request_info %>
+      <label class="radio"><%= t('.request_info') %></label>
+      <%= form.check_box :allow_publish %>
+      <label class="radio"><%= t('.allow_publish') %></label>
+    </p>
+    <p >
+      <%= form.submit @user.new_record? ? t('.signup') : t('.update') %><%= link_to 'Cancelar', user_path %>
+    </p>
+  <% end %>
+</div>

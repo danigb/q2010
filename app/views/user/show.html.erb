@@ -1,0 +1,21 @@
+<%= title 'Tus datos' %>
+
+<div class="properties">
+  <p>
+    <label>Nombre:</label><%= @user.username %>
+  </p>
+  <p>
+    <label>Email: </label><%= @user.email %>
+  </p>
+  <p>
+    <label>Mantenerme informada por email del proceso de la coinvestigación y de eventos relacionados con la misma:</label>
+    <%= @user.request_info? ? 'Sí' : 'No' %>
+  </p>
+  <p>
+    <label>Permitir que los datos de 'Presentación' (y sólo éstos) aparezcan en la cartografía del territorio andaluz:</label>
+    <%= @user.allow_publish? ? 'Sí' : 'No' %>
+  </p>
+  <br/>
+    <%= link_to 'Editar', edit_user_path, :class => 'button' %>
+</div>
+
