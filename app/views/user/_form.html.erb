@@ -1,6 +1,6 @@
 
 <div class="dialog">
-  <% form_for @user, :url => user_path do |form| %>
+  <% form_for(@user, :url => user_path) do |form| %>
     <%= form.error_messages %>
     <p>
       <%= form.label :username, t('.username') %>
@@ -28,7 +28,7 @@
       <label class="radio"><%= t('.allow_publish') %></label>
     </p>
     <p >
-      <%= form.submit @user.new_record? ? t('.signup') : t('.update') %><%= link_to 'Cancelar', user_path %>
+      <%= form.submit @user.new_record? ? t('.signup') : t('.update') %><%= link_to 'Cancelar', user_path, :class => 'cancel' %>
     </p>
   <% end %>
 </div>

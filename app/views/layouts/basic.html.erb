@@ -25,9 +25,10 @@
         <div class="flash"><%= flash[:notice] %></div>
       <% end %>
       <%= link_to t(:feedback), new_feedback_path, :id => 'feedback' %>
+      <%= render '/layouts/user_actions' %>
     </div>
 
-
+<br/><br/>
     <div id="page" class="container">
       <div class="column-1">
         <%= yield  %>

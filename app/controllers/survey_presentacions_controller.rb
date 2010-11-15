@@ -9,7 +9,7 @@ class SurveyPresentacionsController < ApplicationController
   end
 
   def show
-    @survey = User.find(params[:id]).survey_presentacion
+    render_survey_show 'presentacion', User.find(params[:id])
   end
 
   def update

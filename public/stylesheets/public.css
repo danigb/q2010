@@ -98,6 +98,12 @@ h1 {
   -moz-border-radius: 0.2em;
   -webkit-border-radius: 0.2em;
 }
+.actions {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 5px 0;
+}
 #banner {
   position: fixed;
   left: 0;
@@ -203,6 +209,7 @@ h1 {
   text-indent: -1000px;
   margin-top: 3em;
   background-color: #cdd4dc;
+  padding-left: 5px;
 }
 #navigation ul {
   width: 100%;
@@ -335,6 +342,8 @@ h1 {
 #page {
   padding-bottom: 2em;
   background-color: white;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
 }
 #credits {
   font-size: 75%;
@@ -364,6 +373,10 @@ form p {
   width: 100%;
   overflow: hidden;
 }
+form a.cancel {
+  padding-left: 1em;
+  font-size: 80%;
+}
 form p label {
   display: block;
   margin-top: 1.5em;
@@ -379,10 +392,6 @@ form p label {
   color: #9c9e9f;
   font-weight: bold;
   font-size: 90%;
-}
-form p a {
-  padding-left: 1em;
-  font-size: 80%;
 }
 form label.radio {
   font-size: 12px;
@@ -692,3 +701,23 @@ p.bottom { margin-top: 40px; }
 }
 .properties label { font-weight: normal; }
 .properties a { font-weight: normal; }
+.about table thead tr {
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+.about table td {
+  font-size: 100%;
+  font-weight: normal;
+}
+.user_surveys {
+  margin-bottom: 15px;
+  font-size: 80%;
+}
+.user_surveys label {
+  float: left;
+  font-weight: bold;
+  height: 2em;
+  margin-right: 1em;
+  font-size: 110%;
+}
+.user_surveys a { color: gray; }

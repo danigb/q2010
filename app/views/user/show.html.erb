@@ -1,5 +1,10 @@
 <%= title 'Tus datos' %>
 
+<div class="actions">
+  <%= link_to('Editar cuestionario', view_survey_presentacion_path, :class => 'button') %>
+  <%= link_to('Ver otros cuestionarios', surveys_path, :class => 'button') %>
+</div>
+
 <div class="properties">
   <p>
     <label>Nombre:</label><%= @user.username %>

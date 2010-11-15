@@ -8,8 +8,7 @@ class SurveyDinerosController < ApplicationController
   end
 
   def show
-    @survey = User.find(params[:id]).survey_dinero
-    show!
+    render_survey_show 'dinero', User.find(params[:id])
   end
 
   def update

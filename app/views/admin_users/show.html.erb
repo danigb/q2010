@@ -1,22 +1,27 @@
-<% title t('.title', :user => @user.username) %>
+<% title "Participante: #{@user.username}" %>
 
-<div class="actions">
-  <%= link_to 'Volver', users_path %>
+<%= user_surveys(@user) %>
+  <br/><br/><br/>
+<h2>Datos</h2>
+<% form_for(@user, :url => admin_user_path(@user)) do |f|  %>
+  <input id="user_survey_completed" name="user[survey_completed]" type="hidden" value="<%= !@user.survey_completed? %>" />
+  <%= f.submit "Marcar como #{@user.survey_completed? ? 'NO ': ''}completado"  %><% end %>
+
+<div class="properties">
+  <p><label>Completado:</label><%= @user.survey_completed? ? 'Sí' : 'No' %></p>
+  <p><label>Nombre:</label><%= @user.username %></p>
+  <p>
+    <label>Email: </label><%= @user.email %>
+  </p>
+  <p>
+    <label>Mantenerme informada por email del proceso de la coinvestigación y de eventos relacionados con la misma:</label>
+    <%= @user.request_info? ? 'Sí' : 'No' %>
+  </p>
+  <p>
+    <label>Permitir que los datos de 'Presentación' (y sólo éstos) aparezcan en la cartografía del territorio andaluz:</label>
+    <%= @user.allow_publish? ? 'Sí' : 'No' %>
+  </p>
+  <br/>
 </div>
 
-<table>
-  <thead><tr>
-      <td>Pregunta</td>
-      <td>Grupo</td>
-      <td>Respuesta</td>
-      <td></td>
-    </tr></thead>
-  <% @user.answers.each do |a| %>
-    <tr>
-      <td><%= t( "cuestionario.#{a.question.group}.#{a.question.name}" ) %></td>
-      <td><%= a.question.group %></td>
-      <td><%= a.value %></td>
-      <td><%= link_to 'Ver', a %></td>
-    </tr>
-  <% end %>
-</table>
+<br/>

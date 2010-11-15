@@ -4,10 +4,11 @@ module VisualizeHelper
       @survey = survey
     end
 
-    def label(name)
+    def label(name, algo = '', tipo = '')
       value = @survey.class.human_attribute_name(name)
       "<label>#{value}</label>"
     end
+
 
     def text_field(name, options = {})
       value = value_of(name)

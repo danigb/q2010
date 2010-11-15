@@ -6,6 +6,12 @@ module ApplicationHelper
     options[:show] ? content_tag(options[:tag], page_title) : ''
   end
 
+
+
+  def user_surveys(user)
+    render :partial => 'user/surveys', :locals => {:user => user}
+  end
+
   def empty_label
     "<label>&nbsp;</label>"
   end

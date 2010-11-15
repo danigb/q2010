@@ -1,0 +1,5 @@
+<div class="user_surveys"><label>Cuestionarios de '<%= user.username %>'</label>
+  <% Survey::CUESTIONARIOS.each do |name| %>
+    > <%= link_to Survey.name_of(name), {:controller => "survey_#{name}s", :action => :show, :id => user.id} %>
+  <% end %>
+</div>

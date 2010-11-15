@@ -26,14 +26,7 @@
         <div class="flash"><%= flash[:notice] %></div>
       <% end %>
       <%= link_to t(:feedback), new_feedback_path, :id => 'feedback' %>
-      <% if current_user %>
-        <span style="display: none"><%= t(:welcome, :name => current_user.username) %></span>
-        <%= link_to t(:logout), logout_path, :id => 'logout' %>
-        <%= link_to t(:edit_profile), edit_user_path, :id => 'edit_profile' %>
-      <% else %>
-        <%= link_to t(:signup), new_user_path, :id => 'signup' %>
-        <%= link_to t(:login), login_path, :id => 'login' %>
-      <% end %>
+      <%= render '/layouts/user_actions' %>
     </div>
 
 

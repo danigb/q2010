@@ -29,6 +29,8 @@ h1 {font-size: 200%; color: @medio;}
     .round;
 }
 
+.actions {width: 100%; overflow: hidden; margin: 20px 0; padding: 5px 0;}
+
 /* BARRA SUPERIOR */
 #banner {
     position: fixed; left: 0; top: 0; right: 0;
@@ -92,7 +94,7 @@ h1 {font-size: 200%; color: @medio;}
 }
 
 /* NAVEGACION */
-#navigation {text-indent: -1000px; margin-top: 3em; background-color: @fondo;  }
+#navigation {text-indent: -1000px; margin-top: 3em; background-color: @fondo; padding-left: 5px;  }
 #navigation ul, #navigation ol {width: 100%; overflow: hidden; }
 #navigation ol {text-indent: 0; }
 #navigation ol li { display: block; float:left; margin-right: 0.5em;
@@ -132,7 +134,7 @@ h1 {font-size: 200%; color: @medio;}
 
 
 /* PAGINA */
-#page {padding-bottom: 2em; background-color: white;}
+#page {padding-bottom: 2em; background-color: white; .round;}
 
 
 #credits {
@@ -156,11 +158,12 @@ h1 {font-size: 200%; color: @medio;}
 .errorExplanation h2 {font-size: 1px; display: none; width: 0;}
 
 form p, .visualize p {width: 100%; overflow: hidden;}
+form a.cancel {padding-left: 1em; font-size: 80%;}
 form p label, .visualize p label {
     display: block; margin-top: 1.5em; margin-bottom: 0.3em;
     color: @medio; font-weight: bold; font-size: 90%;
 }
-form p a {padding-left: 1em; font-size: 80%;}
+
 form label.radio, form label.checkbox,  .visualize label.radio, .visualize label.checkbox {
     font-size: 12px;
     vertical-align: middle; color: @oscuro;
@@ -271,3 +274,10 @@ p.bottom {margin-top: 40px;}
 .properties p {margin: 5px 0; font-size: 80%;}
 .properties label {font-weight: normal;}
 .properties a {font-weight: normal;}
+
+.about table thead tr {background-color: white; border-bottom: 1px solid black;}
+.about table td {font-size: 100%; font-weight: normal;}
+
+.user_surveys {margin-bottom: 15px; font-size: 80%;}
+.user_surveys label {float: left; font-weight: bold; height: 2em; margin-right: 1em; font-size: 110%;}
+.user_surveys a {color: gray;}

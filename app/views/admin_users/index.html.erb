@@ -11,12 +11,12 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.username %></td>
+        <td><%= link_to user.username, admin_user_path(user) %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at.fecha %></td>
         <td><%= user.survey_completed? ? 'Si' : 'No' %></td>
         <td>
-          <%= link_to 'Ver su cuestionario', admin_survey_path(user)  %>
+          <%= link_to 'Ver', admin_user_path(user)  %>
         </td>
       </tr>
     <% end %>

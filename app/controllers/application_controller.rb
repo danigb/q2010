@@ -16,6 +16,13 @@ class ApplicationController < ActionController::Base
     @admin_page = true
   end
 
+  def render_survey_show(name, user)
+    @survey_name = name
+    @user = user
+    @survey = user.send("survey_#{name}")
+    render :action => '../surveys/show', :layout => 'basic'
+  end
+
   def admin_page?
     @admin_page == true
   end

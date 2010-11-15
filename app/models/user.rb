@@ -16,7 +16,7 @@
 #
 class User < ActiveRecord::Base
   acts_as_authentic
-  attr_accessible :username, :email, :password, :password_confirmation, :request_info, :allow_publish
+  attr_accessible :username, :email, :password, :password_confirmation, :request_info, :allow_publish, :survey_completed
 
   Survey::CUESTIONARIOS.each do |survey|
     klass = "survey_#{survey}".camelize.constantize

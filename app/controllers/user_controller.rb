@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   before_filter :require_user, :only => [:edit, :update, :show]
-  layout 'survey'
+  layout 'basic'
 
   def edit
     @user = current_user
@@ -8,6 +8,10 @@ class UserController < ApplicationController
 
   def show
     @user = current_user
+  end
+
+  def new
+    @user = User.new
   end
 
   def update
@@ -28,7 +32,7 @@ class UserController < ApplicationController
 
 
   def create
-    @user = CurrentUser.new(params[:current_user])
+    @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save

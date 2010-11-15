@@ -8,8 +8,7 @@ class SurveyHabitatsController < ApplicationController
   end
 
   def show
-    @survey = User.find(params[:id]).survey_habitat
-    show!
+    render_survey_show 'habitat', User.find(params[:id])
   end
 
   def update

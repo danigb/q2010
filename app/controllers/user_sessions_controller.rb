@@ -1,13 +1,15 @@
 class UserSessionsController < ApplicationController
-  layout 'survey'
+  layout 'basic'
   inherit_resources
   actions :new, :create, :destroy
 
   def create
-    create!(:notice => "Bienvenidx") { view_survey_presentacion_path }
+    create!(:notice => "Bienvenidx") { current_user.survey_completed? ? surveys_path : view_survey_presentacion_path }
   end
 
   def destroy
-    destroy!(:notice => 'Hasta la vista') {root_path}
+    destroy!(:notice => 'Hasta la vista') do |action|
+      action.html {redirect_to root_path}
+    end
   end
 end
