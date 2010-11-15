@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="shortcut icon" type="image/x-icon" href="/images/r08.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <title><%= yield(:title) || 'Bienvenida' %> - Reu08 Cuestionario Online </title>
     <%= stylesheet_link_tag 'public' %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
@@ -28,7 +29,7 @@
       <%= render '/layouts/user_actions' %>
     </div>
 
-<br/><br/>
+    <br/><br/>
     <div id="page" class="container">
       <div class="column-1">
         <%= yield  %>
