@@ -4,7 +4,10 @@ class UserSessionsController < ApplicationController
   actions :new, :create, :destroy
 
   def create
-    create!(:notice => "Bienvenidx") { @user.survey_completed? ? surveys_path : view_survey_presentacion_path }
+    create!(:notice => "Bienvenidx") do |success, failure|
+      success.html { @user.survey_completed? ? surveys_path : view_survey_presentacion_path }
+      failure.html { render :action => 'new'}
+    end
   end
 
   def destroy
