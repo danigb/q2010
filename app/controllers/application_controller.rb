@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     @survey_name = name
     @user = user
     @survey = user.send("survey_#{name}")
-    render :action => '../surveys/show', :layout => 'basic'
+    render :file => '/surveys/show', :layout => 'basic'
   end
 
   def admin_page?
