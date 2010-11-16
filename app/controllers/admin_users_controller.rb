@@ -5,4 +5,10 @@ class AdminUsersController < AdminController
   def update
     update! { admin_user_path(@user)}
   end
+
+  def edit
+    @user = User.find params[:id]
+    @update_url = admin_user_path(@user)
+    edit!
+  end
 end

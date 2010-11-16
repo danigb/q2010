@@ -91,16 +91,19 @@ ul.properties label {font-weight: bold;}
 ul.properties .actions a {color: @grisoscuro;}
 
 textarea {font-size: @font-small; padding: 2px; border: 1px solid @gris; font-family: @sans;}
-form.import textarea {display: block; width: 90%; height: 20em; margin-bottom: 10px;}
+form.import textarea {display: block; width: 90%; height: 20em; margin-bottom: 10px; font-family: @sans;}
 
 
-fieldset li {width: 100%; overflow: hidden; margin: 10px 0;}
-fieldset li label {width: 10em; float: left; text-align: right; margin-right: 1em;}
+form {font-family: @sans;}
+form p {width: 100%; overflow: hidden; margin: 10px 0;}
+form label {display: block; }
+form p span {display: block; color: gray;}
 input[type=text], input[type=password] {padding: 2px; border: 1px solid @gris;}
 input[type=submit] {padding: 2px 5px;}
+input[type=checkbox] {float: left;}
 fieldset li.check_boxes ol {display: block; clear: both; width: 100%; overflow: hidden;}
 fieldset li.check_boxes li {display: block;}
-
+form a.cancel {padding-left: 1em;}
 fieldset.buttons ol li.commit {float: left; margin-top: 10px;margin-left: 11em; width: auto;}
 fieldset.buttons ol a {display: block; float: left; margin-left: 0.5em; margin-top: 0.8em; color: @grisoscuro;}
 
@@ -109,7 +112,7 @@ table {font-family: @sans; width: 100%; border-bottom: 1px solid @gris; }
 td {padding: 3px 3px;}
 thead tr {font-weight: bold;}
 tbody tr {border-top: 1px solid @gris;}
-td a {color: @grisoscuro;font-family: @sans; font-size: @font-small;}
+td.actions a {color: @grisoscuro;font-family: @sans; font-size: @font-small;}
 td a:hover {color: black;}
 
 .info p {font-size: 120%; margin: 0.5em 0; }
@@ -121,3 +124,6 @@ form .attachment p {margin: 5px 0;}
 .properties p {margin: 5px; font-weight: bold;}
 .properties label {padding-right: 0.5em; font-weight: normal;}
 .activity.survey_completed {color: #c00;}
+.user_surveys {font-family: @sans;}
+.user_surveys label {display: block; height: 2em; margin-right: 0.5em; font-size: 110%;}
+.user_surveys a {color: @grisoscuro;}

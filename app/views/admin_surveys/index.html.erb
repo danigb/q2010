@@ -10,9 +10,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.username %></td>
+        <td><%= link_to user.username, admin_user_path(user) %></td>
         <td><%= user.survey_completed? ? 'Si' : 'No' %></td>
-        <td>
+        <td class="actions">
           <% Survey::CUESTIONARIOS.each do |name| %>
             <%= link_to name, {:controller => "survey_#{name}s", :action => :show, :id => user.id} %>
           <% end %>

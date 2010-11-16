@@ -15,8 +15,9 @@
         <td><%= user.email %></td>
         <td><%= user.created_at.fecha %></td>
         <td><%= user.survey_completed? ? 'Si' : 'No' %></td>
-        <td>
+        <td class="actions">
           <%= link_to 'Ver', admin_user_path(user)  %>
+          <%= link_to 'Editar', edit_admin_user_path(user)  %>
         </td>
       </tr>
     <% end %>
