@@ -1,0 +1,11 @@
+<% title("Editanado cuestionario como administrador") %>
+<h1>Usuario <%= @user.username %></h1>
+<h2>Cuestionario: <%= Survey.name_of @name %></h2>
+
+<% form_for(@survey, :url => admin_survey_path(@user)) do |form| %>
+  <%#= next_step cuestionario_path(:id => 'presentacion') %>
+  <%= hidden_field_tag :survey_name, @name %>
+  <%= save_or_preview_survey(form) %>
+  <%= render :partial => "survey_#{@name}s/#{@name}", :locals => { :form => form } %>
+  <%= save_survey(form) %>
+<% end %>

@@ -197,6 +197,15 @@ form.import textarea {
   margin-bottom: 10px;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
 }
+.flash {
+  width: 70%;
+  margin: 2px auto;
+  background-color: yellow;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  padding: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 form { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif; }
 form p {
   width: 100%;

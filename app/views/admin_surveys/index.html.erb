@@ -4,7 +4,9 @@
     <tr>
       <td>Participante</td>
       <td>Finalizado</td>
-      <td>Cuestionarios</td>
+      <% Survey::CUESTIONARIOS.each do |name| %>
+        <td><%= Survey.name_of name %> </td>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -12,11 +14,12 @@
       <tr>
         <td><%= link_to user.username, admin_user_path(user) %></td>
         <td><%= user.survey_completed? ? 'Si' : 'No' %></td>
-        <td class="actions">
           <% Survey::CUESTIONARIOS.each do |name| %>
-            <%= link_to name, {:controller => "survey_#{name}s", :action => :show, :id => user.id} %>
-          <% end %>
+        <td class="actions">
+            <%= link_to 'Ver', {:controller => "survey_#{name}s", :action => :show, :id => user.id} %>
+            <%= link_to 'Editar', edit_admin_survey_path(user.id, :survey_name => name) %>
         </td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
