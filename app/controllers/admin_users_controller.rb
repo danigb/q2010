@@ -3,7 +3,8 @@ class AdminUsersController < AdminController
   defaults :resource_class => User, :collection_name => 'users', :instance_name => 'user'
 
   def update
-    update! { admin_user_path(@user)}
+    url = params[:next_url] ? params[:next_url] : admin_user_path(@user)
+    update! { url }
   end
 
   def edit

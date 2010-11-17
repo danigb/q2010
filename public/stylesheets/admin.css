@@ -249,6 +249,7 @@ td.actions a {
   font-size: 80%;
 }
 td a:hover { color: black; }
+td form { font-size: 60%; }
 .info p {
   font-size: 120%;
   margin: 0.5em 0;

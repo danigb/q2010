@@ -27,7 +27,4 @@
 </div>
 
 <br/>
-<% form_for(@user, :url => admin_user_path(@user)) do |f|  %>
-  <input id="user_survey_completed" name="user[survey_completed]" type="hidden" value="<%= !@user.survey_completed? %>" />
-  <%= f.submit "Marcar como #{@user.survey_completed? ? 'NO ': ''}completado" %>
-<% end %>
+
