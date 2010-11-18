@@ -4,10 +4,12 @@ class SurveyComunsController < ApplicationController
   actions :update, :show
 
   def edit
+    @image = 'comun'
     @survey = current_user ? current_user.survey_comun :  SurveyComun.new
   end
 
   def show
+    @image = 'comun'
     render_survey_show 'comun', User.find(params[:id])
   end
 

@@ -4,10 +4,12 @@ class SurveyExperienciasController < ApplicationController
   actions :update, :show
 
   def edit
+    @image = "experiencias"
     @survey = current_user ? current_user.survey_experiencia :  SurveyExperiencia.new
   end
 
   def show
+    @image = "experiencias"
     render_survey_show 'experiencia', User.find(params[:id])
   end
 

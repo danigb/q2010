@@ -4,10 +4,12 @@ class SurveyTumismasController < ApplicationController
   actions :update, :show
 
   def edit
+    @image = "tumisma"
     @survey = current_user ? current_user.survey_tumisma :  SurveyTumisma.new
   end
 
   def show
+    @image = "tumisma"
     render_survey_show 'tumisma', User.find(params[:id])
   end
 

@@ -4,11 +4,13 @@ class SurveyPresentacionsController < ApplicationController
   actions :update, :show
 
   def edit
+    @image = 'presentacion'
     @survey = current_user ? current_user.survey_presentacion :  SurveyPresentacion.new
     render :action => 'edit'
   end
 
   def show
+    @image = 'presentacion'
     render_survey_show 'presentacion', User.find(params[:id])
   end
 
