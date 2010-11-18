@@ -5,6 +5,7 @@
     <%= form.radio_button "place", topic %>
     <%= form.label topic, nil, :class => 'radio' %>
   <% end %>
+
 </p>
 
 <p>
@@ -24,6 +25,9 @@
     <%= form.check_box "culture_infra_#{topic}" %>
     <%= form.label "culture_infra_#{topic}", nil, :class => 'checkbox' %>
   <% end %>
+  <label class="checkbox">Otras:</label>
+  <%= form.text_area :culture_infra_other %>
+
 </p>
 
 <p>
@@ -104,7 +108,7 @@
 <table>
   <% SurveyHabitat::EXPENSES.each do |expenses| %>
     <tr>
-      <td class="else">    <%= form.label expenses %></td>
+      <td class="else"><%= form.label expenses %></td>
       <td><%= form.text_field expenses %></td>
     </tr>
   <% end %>
@@ -119,10 +123,16 @@
   <% end %>
 </p>
 
+
+<p>
+  <label>¿Y por otros motivos? ¿Cuáles?</label>
+  <%= form.text_area :travel_desc %>
+</p>
+
 <p>
   <%= form.label :income %>
   <%= form.radio_button :income, :yes %>
-    <%= form.label :income_yes, nil, :class => 'radio' %>
+  <%= form.label :income_yes, nil, :class => 'radio' %>
   <%= form.radio_button :income, :no %>
-    <%= form.label :income_no, nil, :class => 'radio' %>
+  <%= form.label :income_no, nil, :class => 'radio' %>
 </p>

@@ -2,16 +2,26 @@
 <p>
   <%= form.label :birth %>
   <%= form.text_field :birth %>
+  <span class="info">100 caracteres máximo.</span>
 </p>
 
 <p>
   <%= form.label :gender %>
   <%= form.text_field :gender %>
+  <span class="info">100 caracteres máximo.</span>
 </p>
 
 <p>
-  <%= form.label :since %>
-  <%= form.text_field :since %>
+  <%= form.label :relation %>
+  <%= form.check_box :relation_producer %><label class="radio">Produzco cultura</label>
+  <%= form.check_box :relation_producer %><label class="radio">Produzco cultura</label>
+  <label class="checkbox">Otra:</label>
+  <%= form.text_area :relation_other %>
+</p>
+
+<p>
+  <label>¿Qué entiendes por cultura y como te sitúas ante ella?</label>
+  <%= form.text_area :whatsculture %>
 </p>
 
 <p>
@@ -50,32 +60,39 @@
 </p>
 
 <p>
-  <%= form.label :isdifferent %>
-  <%= form.radio_button :isdifferent, :yes %><label class="radio">Sí</label>
-  <%= form.radio_button :isdifferent, :no %><label class="radio">No</label>
+  <label>¿En qué crees que tu trabajo es diferente a otros?</label>
+  <%= form.radio_button :isdifferent, :nojefe %><label class="radio">No tengo jefe</label>
+  <%= form.radio_button :isdifferent, :meorganizo %><label class="radio">Organizo mi tiempo</label>
+  <label class="checkbox">Otro:</label>
+  <%= form.text_area :isdifferent_other %>
 </p>
 
-<p>
-  <%= form.label :isdifferent_desc %>
-  <%= form.text_area :isdifferent_desc %>
-</p>
+<%#= form.label :isdifferent_desc %>
+<%#= form.text_area :isdifferent_desc %>
 
 <p>
-  <%= form.label :proj_good %>
+  <label>Proyecto más gratificante/interesante</label>
   <%= form.text_area :proj_good %>
 </p>
 <p>
-  <%= form.label :proj_good_att %>
-  <%= form.text_field :proj_good_att, :class => 'upload_file',  :id => 'upload_proj_good' %>
+  <%= form.label :proj_good_media %>
+  <%= form.text_area :proj_good_media, :class => 'upload_file',  :id => 'upload_proj_good' %>
+  <span class="info">Copia y pega los enlaces a los recursos que consideres necesario
+    (<%= link_to '¿Y si no lo tengo en la red?', not_online_path, :target => '_blank' %>)
+  </span>
 </p>
 
 <p>
   <%= form.label :proj_bad %>
   <%= form.text_area :proj_bad %>
+  <span class="info">Especificar en que momentos/fases ha habido problemas: producción, distribución, etc..</span>
 </p>
 <p>
-  <%= form.label :proj_bad_att %>
-  <%= form.text_field :proj_bad_att, :class => 'upload_file',  :id => 'upload_proj_bad' %>
+  <%= form.label :proj_bad_media %>
+  <%= form.text_area :proj_bad_att, :class => 'upload_file',  :id => 'upload_proj_bad' %>
+  <span class="info">Copia y pega los enlaces a los recursos que consideres necesario
+    (<%= link_to '¿Y si no lo tengo en la red?', not_online_path, :target => '_blank' %>)
+  </span>
 </p>
 
 <p>
@@ -84,7 +101,8 @@
 </p>
 
 <p>
-  <%= form.label :traject_eval %>
+  <label>Valora la relevancia que tu le otorgas a los siguientes criterios en tu trayectoria
+    profesional.</label>
 <table>
   <thead>
   </thead>
@@ -101,14 +119,39 @@
   <% end %>
 </table>
 </p>
-
 <p>
-  <%= form.label :traject_eval_desc %>
+  <label>Otros criterios de relevancia:</label>
   <%= form.text_area :traject_eval_desc %>
 </p>
+<p>
+  <label>Valora la relevancia que sientes como impuesta respecto
+    de los siguientes criterios en tu trayectoria profesional.</label>
+<table>
+  <thead>
+  </thead>
+  <% SurveyTumisma::TRAJECT_EVAL.each do |topic| %>
+    <tr>
+      <td><%= form.label("traject_eval_#{topic}") %></td>
+      <% Survey::RELEVANCE.each do |relevance| %>
+        <td class="<%= relevance %>">
+          <%= form.radio_button "imposed_eval_#{topic}", relevance %>
+          <span class="tooltip"><%= t(relevance) %> </span>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+<p>
+  <label>Otros criterios de relevancia:</label>
+  <%= form.text_area :imposed_eval_desc %>
+</p>
+
+
+
 
 <p>
-  <%= form.label :gender_influence %>
+  <label>¿Crees que influye tu género u otro tipo de condicionantes en tu carrera profesional?</label>
   <%= form.radio_button :gender_influence, :yes %><label class="radio">Sí</label>
   <%= form.radio_button :gender_influence, :no %><label class="radio">No</label>
 </p>

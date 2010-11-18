@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'static_pages', :action => 'whosbehind'
-  map.finished '/cuestionario_finalizado', :controller => 'static_pages', :action => 'finished'
+  map.finished '/cuestionario-finalizado', :controller => 'static_pages', :action => 'finished'
+  map.help '/ayuda', :controller => 'static_pages', :action => 'help'
+  map.not_online '/no-lo-tengo-en-red', :controller => 'static_pages', :action => 'notonline'
   
   map.login "entrar", :controller => "user_sessions", :action => "new"
   map.logout "salir", :controller => "user_sessions", :action => "destroy"

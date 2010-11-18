@@ -1,10 +1,16 @@
 
 <p>
-  <%= form.label :computer %>
+  <label>¿Usas el ordenador u otras herramientas multimedia en el desarrollo de tus proyectos?</label>
   <%= form.radio_button :computer, :yes %>
   <%= form.label :computer_yes, nil, :class => 'radio' %>
   <%= form.radio_button :computer, :no %>
   <%= form.label :computer_no, nil, :class => 'radio' %>
+</p>
+
+<p>
+  <label>¿Usas otras herramientas o maquinaria habitualmente?</label>
+  <%= form.radio_button :tools, :yes %><label class="radio">Sí</label>
+  <%= form.radio_button :tools, :no %><label class="radio">No</label>
 </p>
 
 <p>
@@ -55,6 +61,11 @@
 </p>
 
 <p>
+  <label>¿Utilizas o te mueves en otro tipo de redes?</label>
+  <%= form.text_area :nets_other %>
+</p>
+
+<p>
   <%= form.label :access %>
   <% SurveyRed::ACCESS.each do |topic| %>
     <%= form.radio_button "access", topic %>
@@ -68,4 +79,9 @@
   <%= form.label :web_find_yes, nil, :class => 'radio' %>
   <%= form.radio_button :web_find, :no %>
   <%= form.label :web_find_no, nil, :class => 'radio' %>
+</p>
+
+<p>
+  <label>Otros espacios de distribución</label>
+  <%= form.text_area :distribution_other %>
 </p>

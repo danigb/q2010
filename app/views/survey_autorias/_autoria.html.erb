@@ -1,6 +1,6 @@
 
   <p>
-    <%= form.label :author %>
+    <label>¿Cómo firmas tus producciones?</label>
     <% SurveyAutoria::AUTHORS.each do |topic| %>
       <%= form.check_box "author_#{topic}" %>
     <%= form.label "author_#{topic}", nil, :class => 'radio' %>
@@ -18,7 +18,9 @@
   </p>
 
   <p>
-    <%= form.label :cc %>
+    <label>¿Has utilizado algún tipo de licencia abierta
+      (<a href="http://es.creativecommons.org/">Creative Commons</a>, 
+      <a href="http://www.opencontent.org/">Open Content</a>...) <br/>para tus proyectos? ¿Cuál?</label>
     <%= form.text_area :cc %>
   </p>
 

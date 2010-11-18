@@ -2,10 +2,17 @@ class StaticPagesController < ApplicationController
   layout 'basic'
   before_filter :require_user, :only => [:finished]
 
-  caches_page :whosbehind
+  caches_page :whosbehind, :help, :notonline
 
   def whosbehind
     
+  end
+
+  def help
+  end
+
+  def notonline
+
   end
 
   def finished

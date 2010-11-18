@@ -1,124 +1,137 @@
 
-  <p>
-    <%= form.label :studies %>
-    <% SurveyExperiencia::STUDY_CYCLES.each do |name| %>
-      <%= form.check_box name %><%= form.label name, nil, :class => 'radio' %>
-    <% end %>
-  </p>
+<p>
+  <%= form.label :studies %>
+  <% SurveyExperiencia::STUDY_CYCLES.each do |name| %>
+    <%= form.check_box name %><%= form.label name, nil, :class => 'radio' %>
+  <% end %>
+</p>
 
 
-  <p>
-    <%= form.label :studies_eval %>
-  <table>
-    <thead>
-      <tr>
-      </tr>
-    </thead>
-    <% SurveyExperiencia::STUDIES.each do |topic| %>
-      <tr>
-        <td><%= form.label "studies_eval_#{topic}" %></td>
-        <% Survey::RELEVANCE.each do |relevance| %>
-          <td class="<%= relevance %>">
-            <%= form.radio_button "studies_eval_#{topic}", relevance %>
-            <span class="tooltip"><%= t(relevance) %> </span>
-          </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-  </p>
+<p>
+  <%= form.label :studies_eval %>
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <% SurveyExperiencia::STUDIES.each do |topic| %>
+    <tr>
+      <td><%= form.label "studies_eval_#{topic}" %></td>
+      <% Survey::RELEVANCE.each do |relevance| %>
+        <td class="<%= relevance %>">
+          <%= form.radio_button "studies_eval_#{topic}", relevance %>
+          <span class="tooltip"><%= t(relevance) %> </span>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
 
-  <p>
-    <%= form.label :studies_eval_desc %>
-    <%= form.text_area :studies_eval_desc %>
-  </p>
+<p>
+  <label>Otras formas de aprendizaje que utilices.</label>
+  <%= form.text_area :studies_eval_desc %>
+</p>
 
-  <p>
-    <%= form.label :formation %>
-    <%= form.radio_button :formation, :yes %><label class="radio">Sí</label>
-    <%= form.radio_button :formation, :no %><label class="radio">No</label>
-  </p>
+<p>
+  <%= form.label :formation %>
+  <%= form.radio_button :formation, :yes %><label class="radio">Sí</label>
+  <%= form.radio_button :formation, :no %><label class="radio">No</label>
+</p>
 
-  <p>
-    <%= form.label :formation_desc %>
-    <%= form.text_area :formation_desc %>
-  </p>
+<p>
+  <%= form.label :formation_desc %>
+  <%= form.text_area :formation_desc %>
+</p>
 
-  <p>
-    <%= form.label :formation_kind %>
-    <%= form.check_box :formation_kind_course %><%= form.label :formation_kind_course, nil, :class => 'checkbox' %>
-    <%= form.check_box :formation_kind_exchange %><%= form.label :formation_kind_exchange, nil, :class => 'checkbox' %>
-    <%= form.check_box :formation_kind_auto %><%= form.label :formation_kind_auto, nil, :class => 'checkbox' %>
-    <%= form.check_box :formation_kind_net %><%= form.label :formation_kind_net, nil, :class => 'checkbox' %>
-  </p>
+<p>
+  <%= form.label :formation_kind %>
+  <%= form.check_box :formation_kind_course %><%= form.label :formation_kind_course, nil, :class => 'checkbox' %>
+  <%= form.check_box :formation_kind_exchange %><%= form.label :formation_kind_exchange, nil, :class => 'checkbox' %>
+  <%= form.check_box :formation_kind_auto %><%= form.label :formation_kind_auto, nil, :class => 'checkbox' %>
+  <%= form.check_box :formation_kind_net %><%= form.label :formation_kind_net, nil, :class => 'checkbox' %>
+</p>
 
-  <p>
-    <%= form.label :formation_kind_desc %>
-    <%= form.text_area :formation_kind_desc %>
-  </p>
+<p>
+  <%= form.label :formation_kind_desc %>
+  <%= form.text_area :formation_kind_desc %>
+</p>
 
-  <p>
-    <%= form.label :formation_done %>
-  <table>
-    <thead>
-      <tr>
-        <% SurveyExperiencia::FORMATION.each do |topic| %>
-          <td><%= SurveyExperiencia.human_attribute_name "formation_done_#{topic}"  %></td>
-        <% end %>
-      </tr>
-    </thead>
-    <% (1..5).each do |number| %>
-      <tr>
-        <% SurveyExperiencia::FORMATION.each do |topic| %>
-          <td><%= form.text_field "formation_done_#{topic}_#{number}" %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-  </p>
+<p>
+  <%= form.label :formation_done %>
+<table>
+  <thead>
+    <tr>
+      <% SurveyExperiencia::FORMATION.each do |topic| %>
+        <td><%= SurveyExperiencia.human_attribute_name "formation_done_#{topic}"  %></td>
+      <% end %>
+    </tr>
+  </thead>
+  <% (1..5).each do |number| %>
+    <tr>
+      <% SurveyExperiencia::FORMATION.each do |topic| %>
+        <td><%= form.text_field "formation_done_#{topic}_#{number}" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<span class="info">32 caracteres máximo por cada caja de texto.</span>
+</p>
 
-  <p>
-    <%= form.label :formation_week %>
-    <%= form.radio_button :formation_week, 'none' %><%= form.label :formation_week_none, nil, :class => 'radio' %>
-    <%= form.radio_button :formation_week, '1to3' %><%= form.label :formation_week_1to3, nil, :class => 'radio' %>
-    <%= form.radio_button :formation_week, '3to5' %><%= form.label :formation_week_3to5, nil, :class => 'radio' %>
-    <%= form.radio_button :formation_week, '5to8' %><%= form.label :formation_week_5to8, nil, :class => 'radio' %>
-    <%= form.radio_button :formation_week, 'more8' %><%= form.label :formation_week_more8, nil, :class => 'radio' %>
-  </p>
+<p>
+  <%= form.label :formation_week %>
+  <%= form.radio_button :formation_week, 'none' %><%= form.label :formation_week_none, nil, :class => 'radio' %>
+  <%= form.radio_button :formation_week, '1to3' %><%= form.label :formation_week_1to3, nil, :class => 'radio' %>
+  <%= form.radio_button :formation_week, '3to5' %><%= form.label :formation_week_3to5, nil, :class => 'radio' %>
+  <%= form.radio_button :formation_week, '5to8' %><%= form.label :formation_week_5to8, nil, :class => 'radio' %>
+  <%= form.radio_button :formation_week, 'more8' %><%= form.label :formation_week_more8, nil, :class => 'radio' %>
+</p>
 
-  <p>
-    <%= form.label :formation_week_desc %>
-    <%= form.text_area :formation_week_desc %>
-  </p>
+<p>
+  <%= form.label :formation_week_desc %>
+  <%= form.text_area :formation_week_desc %>
+</p>
 
-  <p>
-    <%= form.label :formation_paid %>
-    <%= form.label(:formation_paid_company) %> <%= form.text_field :formation_paid_company %>
-    <%= form.label(:formation_paid_grant) %> <%= form.text_field :formation_paid_grant %>
-    <%= form.label(:formation_paid_client) %> <%= form.text_field :formation_paid_client %>
-    <%= form.label(:formation_paid_not) %> <%= form.text_field :formation_paid_not %>
-  </p>
+<p>
+  <%= form.label :formation_paid %>
+<table>
+  <tr><td></td><td></tr>
+  <tr><td><label class="checkbox">Es renumerado por la empresa</label></td>
+    <td><%= form.text_field :formation_paid_company, :class => 'small' %></td></tr>
+  <tr><td><label class="checkbox">Es renumerado por becas</label></td>
+    <td><%= form.text_field :formation_paid_grant %></td></tr>
+  <tr><td><label class="checkbox">Es renumerado por lo que le cobras a tus clientes</label></td>
+    <td><%= form.text_field :formation_paid_client %></td></tr>
+  <tr><td><label class="checkbox">No es renumerado</label></td>
+    <td><%= form.text_field :formation_paid_not %></td></tr>
+</table>
+</p>
 
-  <p>
-    <%= form.label :formation_part %>
-    <%= form.radio_button :formation_part, :yes %><%= form.label :formation_part_yes, nil, :class => 'radio' %>
-    <%= form.radio_button :formation_part, :no %><%= form.label :formation_part_no, nil, :class => 'radio' %>
-  </p>
+<p>
+  <%= form.label :formation_part %>
+  <%= form.radio_button :formation_part, :yes %><label class="radio">Sí</label>
+  <%= form.radio_button :formation_part, :no %><label class="radio">No</label>
+</p>
 
-  <p>
-    <%= form.label :form_access %>
-    <% SurveyExperiencia::FORMATION_ACCESS.each do |topic| %>
-      <%= form.check_box "form_access_#{topic}" %>
-      <label class="checkbox"><%=SurveyExperiencia.human_attribute_name("form_access_#{topic}") %></label>
-    <% end %>
-  </p>
+<p>
+  <%= form.label :form_access %>
+  <% SurveyExperiencia::FORMATION_ACCESS.each do |topic| %>
+    <%= form.check_box "form_access_#{topic}" %>
+    <label class="checkbox"><%=SurveyExperiencia.human_attribute_name("form_access_#{topic}") %></label>
+  <% end %>
+</p>
 
-  <p>
-    <%= form.label :form_access_desc  %>
-    <%= form.text_area :form_access_desc %>
-  </p>
+<p>
+  <%= form.label :form_access_desc  %>
+  <%= form.text_area :form_access_desc %>
+</p>
 
-  <p>
-    <%= form.label :formation_love %>
-    <%= form.text_area :formation_love %>
-  </p>
+<p>
+  <%= form.label :formation_love %>
+  <%= form.text_area :formation_love %>
+
+</p>
+<p>
+  <label>¿Cómo te gusta aprender?</label>
+  <%= form.text_area :howlearn %>
+</p>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100715161220) do
+ActiveRecord::Schema.define(:version => 20101118183327) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
     t.text     "proposal"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "quality_other"
   end
 
   create_table "survey_dineros", :force => true do |t|
@@ -134,6 +135,9 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
     t.string   "bjob_money",                  :limit => 16
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "ajob_decision_other"
+    t.text     "lot_of_work"
+    t.text     "money_to_family"
   end
 
   create_table "survey_experiencias", :force => true do |t|
@@ -203,6 +207,7 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
     t.text     "formation_love"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "howlearn"
   end
 
   create_table "survey_habitats", :force => true do |t|
@@ -239,6 +244,14 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
     t.string   "income",                   :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "culture_infra_calle",                     :default => false
+    t.boolean  "culture_infra_bares",                     :default => false
+    t.boolean  "culture_infra_parques",                   :default => false
+    t.text     "culture_infra_other"
+    t.string   "comida",                   :limit => 512
+    t.string   "formacion",                :limit => 512
+    t.string   "indumentaria",             :limit => 512
+    t.text     "travel_desc"
   end
 
   create_table "survey_presentacions", :force => true do |t|
@@ -289,27 +302,30 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
 
   create_table "survey_reds", :force => true do |t|
     t.integer  "user_id"
-    t.string   "computer",       :limit => 16
-    t.string   "operating",      :limit => 32
+    t.string   "computer",           :limit => 16
+    t.string   "operating",          :limit => 32
     t.text     "operating_desc"
-    t.boolean  "internet_home",                :default => false
-    t.boolean  "internet_cyber",               :default => false
-    t.boolean  "internet_work",                :default => false
+    t.boolean  "internet_home",                    :default => false
+    t.boolean  "internet_cyber",                   :default => false
+    t.boolean  "internet_work",                    :default => false
     t.text     "internet_desc"
-    t.string   "internet_time",  :limit => 32
+    t.string   "internet_time",      :limit => 32
     t.text     "web_links"
-    t.string   "p2p",            :limit => 32
-    t.string   "access",         :limit => 32
-    t.string   "web_find",       :limit => 32
+    t.string   "p2p",                :limit => 32
+    t.string   "access",             :limit => 32
+    t.string   "web_find",           :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tools",              :limit => 4
+    t.text     "nets_other"
+    t.text     "distribution_other"
   end
 
   create_table "survey_tumismas", :force => true do |t|
     t.integer  "user_id"
     t.string   "birth",                  :limit => 100
     t.string   "gender",                 :limit => 100
-    t.string   "since",                  :limit => 100
+    t.string   "relation_other",         :limit => 100
     t.text     "books"
     t.text     "films"
     t.text     "musics"
@@ -337,6 +353,21 @@ ActiveRecord::Schema.define(:version => 20100715161220) do
     t.text     "gender_influence_desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "relation_producer"
+    t.boolean  "relation_consumer"
+    t.text     "relation"
+    t.text     "whatsculture"
+    t.text     "isdifferent_other"
+    t.text     "proj_good_media"
+    t.text     "proj_bad_media"
+    t.string   "imposed_eval_talent",    :limit => 16
+    t.string   "imposed_eval_knowledge", :limit => 16
+    t.string   "imposed_eval_relations", :limit => 16
+    t.string   "imposed_eval_fame",      :limit => 16
+    t.string   "imposed_eval_money",     :limit => 16
+    t.string   "imposed_eval_marketing", :limit => 16
+    t.string   "imposed_eval_gender",    :limit => 16
+    t.text     "imposed_eval_desc"
   end
 
   create_table "users", :force => true do |t|

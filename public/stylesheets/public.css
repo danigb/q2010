@@ -394,6 +394,13 @@ form p label {
   font-weight: bold;
   font-size: 90%;
 }
+span.info {
+  display: block;
+  font-size: 80%;
+  color: #9c9e9f;
+  margin-left: 1em;
+  font-weight: normal;
+}
 form label.radio {
   font-size: 12px;
   vertical-align: middle;
@@ -447,6 +454,7 @@ form textarea {
   margin-left: 1em;
   width: 80%;
 }
+form input.small { width: 20em; }
 form textarea {
   height: 4em;
   font-size: 85%;
@@ -517,10 +525,12 @@ d.visualize .control {
 form table {
   margin-left: 1em;
   width: 81.5%;
+  margin-bottom: 0.5em;
 }
 .visualize table {
   margin-left: 1em;
   width: 81.5%;
+  margin-bottom: 0.5em;
 }
 form table td {
   padding: 2px;

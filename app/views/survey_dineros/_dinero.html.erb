@@ -60,89 +60,100 @@
   <% SurveyDinero::JOB_MONEY.each do |topic| %>
     <%= form.radio_button "ajob_money", topic %>
     <%= form.label topic, nil, :class => 'radio' %>
-    <% end %>
-  </p>
+  <% end %>
+</p>
 
-  <p>
-    <%= form.label :ajob_decision %>
-    <% SurveyDinero::AJOB_DECISION.each do |topic| %>
-      <%= form.radio_button "ajob_decision", topic %>
-      <%= form.label topic, nil, :class => 'radio' %>
-      <% end %>
-    </p>
+<p>
+  <%= form.label :ajob_decision %>
+  <% SurveyDinero::AJOB_DECISION.each do |topic| %>
+    <%= form.radio_button "ajob_decision", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+  <label class="checkbox">Otra:</label>
+  <%= form.text_area :ajob_decision_other %>
+</p>
 
-    <p>
-      <%= form.label :gestation %>
-      <%= form.text_area :gestation %>
-    </p>
+<p>
+  <%= form.label :gestation %>
+  <%= form.text_area :gestation %>
+</p>
 
-    <p>
-      <%= form.label :ajob_vocation %>
-      <%= form.radio_button :ajob_vocation, :yes %><%= form.label :ajob_vocation_yes, nil, :class => 'radio' %>
-      <%= form.radio_button :ajob_vocation, :no %><%= form.label :ajob_vocation_no, nil, :class => 'radio' %>
-    </p>
+<p>
+  <%= form.label :ajob_vocation %>
+  <%= form.radio_button :ajob_vocation, :yes %><%= form.label :ajob_vocation_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :ajob_vocation, :no %><%= form.label :ajob_vocation_no, nil, :class => 'radio' %>
+</p>
 
-    <p>
-      <%= form.label :ajob_vocation_money %>
-      <% SurveyDinero::AJOB_VOCATION_MONEY.each do |topic| %>
-        <%= form.check_box "ajob_vocation_money_#{topic}" %>
-        <label class="checkbox"><%= SurveyDinero.human_attribute_name("ajob_vocation_money_#{topic}") %></label>
-      <% end %>
-    </p>
+<p>
+  <%= form.label :ajob_vocation_money %>
+  <% SurveyDinero::AJOB_VOCATION_MONEY.each do |topic| %>
+    <%= form.check_box "ajob_vocation_money_#{topic}" %>
+    <label class="checkbox"><%= SurveyDinero.human_attribute_name("ajob_vocation_money_#{topic}") %></label>
+  <% end %>
+</p>
 
-    <p>
-      <%= form.label :ajob_vocation_money_desc %>
-      <%= form.text_area :ajob_vocation_money_desc %>
-    </p>
+<p>
+  <label>Otras fuentes o activos (tiempo, espacios, infraestructuras, equipos, etc..)</label>
+  <%= form.text_area :ajob_vocation_money_desc %>
+</p>
 
-    <p>
-      <%= form.label :grants %>
-      <%= form.radio_button :grants, :yes %><%= form.label :grants_yes, nil, :class => 'radio' %>
-      <%= form.radio_button :grants, :no %><%= form.label :grants_no, nil, :class => 'radio' %>
-    </p>
+<p>
+  <%= form.label :grants %>
+  <%= form.radio_button :grants, :yes %><%= form.label :grants_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :grants, :no %><%= form.label :grants_no, nil, :class => 'radio' %>
+</p>
 
-    <p>
-      <%= form.label :grants_who %>
-      <%= form.text_area :grants_who %>
-    </p>
+<p>
+  <%= form.label :grants_who %>
+  <%= form.text_area :grants_who %>
+</p>
 
-    <p>
-      <%= form.label :grants_bad %>
-      <% SurveyDinero::GRANTS_BAD.each do |topic| %>
-        <%= form.check_box "grants_bad_#{topic}" %>
-        <label class="checkbox"><%= SurveyDinero.human_attribute_name("grants_bad_#{topic}") %></label>
-      <% end %>
-    </p>
+<p>
+  <%= form.label :grants_bad %>
+  <% SurveyDinero::GRANTS_BAD.each do |topic| %>
+    <%= form.check_box "grants_bad_#{topic}" %>
+    <label class="checkbox"><%= SurveyDinero.human_attribute_name("grants_bad_#{topic}") %></label>
+  <% end %>
+</p>
 
-    <p>
-      <%= form.label :grants_bad_desc %>
-      <%= form.text_area :grants_bad_desc %>
-    </p>
+<p>
+  <%= form.label :grants_bad_desc %>
+  <%= form.text_area :grants_bad_desc %>
+</p>
 
-    <p>
-      <%= form.label :bjob %>
-      <%= form.radio_button :bjob, :yes %><%= form.label :bjob_yes, nil, :class => 'radio' %>
-      <%= form.radio_button :bjob, :no %><%= form.label :bjob_no, nil, :class => 'radio' %>
-    </p>
+<p>
+  <%= form.label :bjob %>
+  <%= form.radio_button :bjob, :yes %><%= form.label :bjob_yes, nil, :class => 'radio' %>
+  <%= form.radio_button :bjob, :no %><%= form.label :bjob_no, nil, :class => 'radio' %>
+</p>
 
-    <p>
-      <%= form.label :bjob_which %>
-      <%= form.text_area :bjob_which %>
-    </p>
+<p>
+  <%= form.label :bjob_which %>
+  <%= form.text_area :bjob_which %>
+</p>
 
+<p>
+  <%= form.label :bjob_time %>
+  <%= form.radio_button :bjob_time, 'less15' %><%= form.label :bjob_time_less15, nil, :class => 'radio' %>
+  <%= form.radio_button :bjob_time, '15to36' %><%= form.label :bjob_time_15to35, nil, :class => 'radio' %>
+  <%= form.radio_button :bjob_time, '36to46' %><%= form.label :bjob_time_36to46, nil, :class => 'radio' %>
+  <%= form.radio_button :bjob_time, 'more46' %><%= form.label :bjob_time_more46, nil, :class => 'radio' %>
+</p>
 
-    <p>
-      <%= form.label :bjob_time %>
-      <%= form.radio_button :bjob_time, 'less15' %><%= form.label :bjob_time_less15, nil, :class => 'radio' %>
-      <%= form.radio_button :bjob_time, '15to36' %><%= form.label :bjob_time_15to35, nil, :class => 'radio' %>
-      <%= form.radio_button :bjob_time, '36to46' %><%= form.label :bjob_time_36to46, nil, :class => 'radio' %>
-      <%= form.radio_button :bjob_time, 'more46' %><%= form.label :bjob_time_more46, nil, :class => 'radio' %>
-    </p>
+<p>
+  <%= form.label :bjob_money %>
+  <% SurveyDinero::JOB_MONEY.each do |topic| %>
+    <%= form.radio_button "bjob_money", topic %>
+    <%= form.label topic, nil, :class => 'radio' %>
+  <% end %>
+</p>
 
-    <p>
-      <%= form.label :bjob_money %>
-      <% SurveyDinero::JOB_MONEY.each do |topic| %>
-        <%= form.radio_button "bjob_money", topic %>
-        <%= form.label topic, nil, :class => 'radio' %>
-      <% end %>
-    </p>
+<p>
+  <label>¿Hay momentos del año con más trabajo? ¿Cuáles?</label>
+  <%= form.text_area :lot_of_work %>
+</p>
+
+<p>
+  <label>¿Ganas suficiente para criar hijxs?</label>
+  <%= form.text_area :money_to_family %>
+</p>

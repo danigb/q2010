@@ -1,7 +1,7 @@
 
 
 <p>
-  <%= form.label :institution %>
+  <label>Señala tres iniciativas culturales institucionales que te interesen y tres que sean más conocidas.</label>
   <%= form.text_area :institution %>
 </p>
 
@@ -16,7 +16,6 @@
       <% Survey::RELEVANCE.each do |relevance| %>
         <td class="<%= relevance %> radio"><%= form.radio_button "policy_#{topic}", relevance %>
           <span class="tooltip"><%= t(relevance) %> </span></td>
-        </td>
       <% end %>
     </tr>
   <% end %>
@@ -32,11 +31,10 @@
   </thead>
   <% SurveyComun::CULTURE_STEPS.each do |topic| %>
     <tr>
-      <td><%= form.label ("culture_steps_#{topic}") %></td>
+      <td><%= form.label("culture_steps_#{topic}") %></td>
       <% Survey::RELEVANCE.each do |relevance| %>
         <td class="<%= relevance %> radio"><%= form.radio_button "culture_steps_#{topic}", relevance %>
           <span class="tooltip"><%= t(relevance) %> </span></td>
-        </td>
       <% end %>
     </tr>
   <% end %>
@@ -75,7 +73,7 @@
 </p>
 
 <p>
-  <%= form.label :conditions %>
+  <label>¿Cómo valoras las condiciones de vida en tu entorno más cercano de lxs trabajadorxs del sector cultural?</label>
   <% SurveyComun::CONDITIONS.each do |topic| %>
     <%= form.radio_button "conditions", topic %>
     <%= form.label topic, nil, :class => 'radio' %>
@@ -83,7 +81,7 @@
 </p>
 
 <p>
-  <%= form.label :administration %>
+  <label>Valora la actuación de las administraciones locales en los siguientes ámbitos:</label>
 <table>
   <thead>
   </thead>
@@ -93,11 +91,15 @@
       <% Survey::QUALITY.each do |quality| %>
         <td class="<%= quality %> radio"><%= form.radio_button "administration_#{topic}", quality %>
           <span class="tooltip"><%= t(quality) %> </span></td>
-        </td>
       <% end %>
     </tr>
   <% end %>
 </table>
+</p>
+
+<p>
+  <label>¿Algo más que decir al respecto?</label>
+  <%= form.text_area :quality_other %>
 </p>
 
 <p>
@@ -114,7 +116,7 @@
 </p>
 
 <p>
-  <%= form.label :proposal %>
+  <label>Cuéntanos algo que desees: sueños, relatos, expectativas, etc...</label>
   <%= form.text_area :proposal %>
 </p>
 
