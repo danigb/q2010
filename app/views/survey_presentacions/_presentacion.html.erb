@@ -7,14 +7,23 @@
 </p>
 
 <p>
-  <%= form.label :page_url %>
-  <%= form.text_field :page_url %>
-  <span class="info">Puedes escribir varias. 250 caracteres máximo.</span>
+  <label>Web(s) / blog(s)</label>
+  <%= form.text_area :page_url %>
+
 </p>
 
 <p>
   <%= form.label :icon %>
-  <%= form.text_field :icon, :class => 'upload_file', :id => 'icon' %>
+  <%= form.text_area :icon, :class => 'upload_file', :id => 'icon' %>
+  <span class="info">Puedes un enlaces desde la web, o...</span>
+  <br/>
+  <%= form.file_field :avatar %>
+  <span class="info">...subir una imágen siempre que no sea mayor de 1Mb.</span>
+
+  <% if @survey.avatar %>
+    <label>Imagen / logo /gráfica actual:</label>
+    <%= image_tag @survey.avatar.url(:medium) %>
+  <% end %>
 </p>
 
 <p>
@@ -33,7 +42,7 @@
 
 <p>
   <label>¿En qué ámbitos desempeñas alguna actividad? Usa las cajas de texto para dar más información...</label>
-  
+
 <table>
   <tr><td></td><td><span class="info">250 caracteres máximo en cada caja de texto.</span></td></tr>
   <% SurveyPresentacion::AMBITOS.each do |name| %>

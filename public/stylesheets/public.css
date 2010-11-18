@@ -77,6 +77,11 @@ h1 {
   font-size: 200%;
   color: #9c9e9f;
 }
+h2 {
+  font-size: 150%;
+  color: #9c9e9f;
+  margin-bottom: -1em;
+}
 .container {
   width: 960px;
   margin: 0 auto;
@@ -425,6 +430,7 @@ form label.checkbox {
   color: #414042;
   margin: 0 0 3px 35px;
 }
+.visualize img { float: left; }
 form .field_info {
   font-size: 75%;
   color: #9c9e9f;
@@ -626,6 +632,11 @@ thead {
   background-color: white;
 }
 tr.odd { background-color: #efefef; }
+.answer {
+  display: block;
+  background-color: #efefef;
+  padding: 5px;
+}
 table.answers {
   margin-top: 20px;
   border-top: 1px solid #cdd4dc;
@@ -732,3 +743,11 @@ p.bottom { margin-top: 40px; }
   font-size: 110%;
 }
 .user_surveys a { color: gray; }
+.control {
+  overflow: hidden;
+  text-indent: -10000px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid red;
+}
+.control.checkbox-off { background: url('/images/checkbox-on') white no-repeat; }

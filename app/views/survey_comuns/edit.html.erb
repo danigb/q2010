@@ -2,6 +2,8 @@
 
 <% form_for @survey do |form| %>
   <%#= next_step cuestionario_path(:id => 'presentacion') %>
+
+  <%= render '/surveys/completed' if current_user and current_user.survey_completed %>
   <%= save_or_preview_survey(form) %>
   <%= render 'comun', :form => form %>
   <%= save_survey(form) %>

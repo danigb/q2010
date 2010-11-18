@@ -1,8 +1,9 @@
 <% title("Presentación") %>
 
-<% form_for @survey do |form| %>
+<% form_for(@survey, :html => { :multipart => true }) do |form| %>
   <%#= next_step cuestionario_path(:id => 'presentacion') %>
 
+  <%= render '/surveys/completed' if current_user and current_user.survey_completed %>
   <%= save_or_preview_survey(form) %>
   <%= render 'presentacion', :form => form %>
   <%= save_survey(form) %>

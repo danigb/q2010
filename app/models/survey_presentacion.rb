@@ -1,5 +1,6 @@
 class SurveyPresentacion < ActiveRecord::Base
   belongs_to :user
+  has_attached_file :avatar, :styles => { :medium => "300x300>"}
   AMBITOS =  [:actividad_arquitectura, :actividad_plasticas, :actividad_cine, :actividad_comic,
         :actividad_danza, :actividad_diseno, :actividad_docencia, :actividad_fotografia, :actividad_gestion,
         :actividad_literatura, :actividad_musica, :actividad_programacion, :actividad_netart,

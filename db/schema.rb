@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101118183327) do
+ActiveRecord::Schema.define(:version => 20101118212711) do
 
   create_table "activities", :force => true do |t|
     t.string   "category"
@@ -257,8 +257,8 @@ ActiveRecord::Schema.define(:version => 20101118183327) do
   create_table "survey_presentacions", :force => true do |t|
     t.integer  "user_id"
     t.string   "name",                            :limit => 256
-    t.string   "page_url",                        :limit => 256
-    t.string   "icon",                            :limit => 16
+    t.text     "page_url"
+    t.text     "icon"
     t.string   "location",                        :limit => 256
     t.string   "indi_colective",                  :limit => 16
     t.boolean  "activity_actividad_arquitectura",                 :default => false
@@ -298,6 +298,10 @@ ActiveRecord::Schema.define(:version => 20101118183327) do
     t.string   "interest",                        :limit => 1024
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "survey_reds", :force => true do |t|

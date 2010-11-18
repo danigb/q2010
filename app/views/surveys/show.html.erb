@@ -2,11 +2,11 @@
 <%= title "Participante '#{@user.username}': #{Survey.name_of @survey_name}" %>
 
 <% if @survey %>
-<div class="visualize">
-  <% visualize_for @survey do |form| %>
-    <%= render @survey_name, :form => form %>
-  <% end %>
-</div>
+  <div class="visualize">
+    <% visualize_for @survey do |form| %>
+        <%= render @survey_name, :form => form %>
+    <% end %>
+  </div>
 <% else %>
-No tiene
+  No tiene
 <% end %>
