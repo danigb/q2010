@@ -19,10 +19,11 @@ class AdminSurveysController < AdminController
     data = params["survey_#{@name}".to_sym]
     if @survey.update_attributes(data)
       flash[:notice] = "Guardado!"
+      redirect_to admin_surveys_path
     else
       flash[:error] = "Horror!"
+      render :action => 'edit'
     end
-    render :action => 'edit'
 
   end
 

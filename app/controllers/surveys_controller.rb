@@ -5,7 +5,7 @@ class SurveysController < ApplicationController
 
   def index
     if current_user.survey_completed?
-      @users = User.all
+      @users = User.all(:conditions => {:survey_completed =>  true})
     else
       render :action => 'not_completed'
     end
